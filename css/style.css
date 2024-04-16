@@ -1,0 +1,219 @@
+/**
+ * Theme Name:        EasyJur Jurisprudências
+ * Theme URI:         https://easyjur.com
+ * Description:       Acesse jurisprudências atualizadas com apenas um clique de busca.
+ * Version:           1.0.0
+ * Author:            EasyJur Technology
+ * Author URI:        https://easyjur.com
+ */
+
+
+
+
+ :root {
+    --azul-base: #151546;
+    --branco: #fff;
+    --cinza: #666;
+    --vermelho: #f21f3c;
+    --branco-fundo: #ececec;
+    --azul-secundario: #2784b1;
+    --azul-secundario-hover: #05608c;
+    --cinza-secundario: #95a8b1;
+  }
+
+  body {
+    background-color: var(--branco-fundo);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  
+  #jurisprudencias_wp .navbar {
+    background-color: var(--azul-base);
+  }
+  
+  #jurisprudencias_wp .card {
+    max-width: 1920px;
+    width: 90%;
+  }
+  
+  #jurisprudencias_wp .botao-copia-modal,
+  #jurisprudencias_wp .botao-impressora {
+    border: solid 1px var(--azul-secundario);
+    color: var(--azul-secundario);
+    transition: 0.3s;
+  }
+  #jurisprudencias_wp .botao-copia-modal:hover,
+  #jurisprudencias_wp .botao-impressora:hover {
+    background-color: var(--azul-secundario-hover);
+    color: var(--branco);
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.35);
+    transform: scale(0.9);
+  }
+  
+  #jurisprudencias_wp .botao-primario,
+  #jurisprudencias_wp .botao-pesquisa {
+    background-color: var(--azul-secundario);
+    color: var(--branco);
+    transition: 0.3s;
+  }
+  #jurisprudencias_wp .botao-primario:hover,
+  #jurisprudencias_wp .botao-pesquisa:hover {
+    background-color: var(--azul-secundario-hover);
+    color: var(--branco);
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.35);
+    transform: scale(0.9);
+  }
+  
+  #jurisprudencias_wp .botao-secundario,
+  #jurisprudencias_wp .botao-limpa-filtro {
+    background-color: var(--cinza-secundario);
+    color: var(--branco);
+    transition: 0.3s;
+  }
+  
+  #jurisprudencias_wp .botao-secundario:hover,
+  #jurisprudencias_wp .botao-limpa-filtro:hover {
+    background-color: var(--azul-secundario-hover);
+    color: var(--branco);
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.35);
+    transform: scale(0.9);
+  }
+  
+  #jurisprudencias_wp .titulo-modulo::after {
+    content: "";
+    height: 2px;
+    background-color: var(--vermelho);
+    width: 200px;
+    display: block;
+    margin-top: 3px;
+  }
+  
+  #logo-jurisprudencia {
+    width: 150px;
+  }
+  
+  #jurisprudencias_wp .inative {
+    display: none;
+  }
+  
+  #jurisprudencias_wp .link-pesquisa {
+    text-decoration: none;
+    color: var(--azul-base);
+  }
+  
+  #jurisprudencias_wp .titulo {
+    font-weight: 600;
+  }
+  
+  #jurisprudencias_wp .dado-tabela {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1px 0;
+    gap: 5px;
+  }
+  
+  #jurisprudencias_wp .grid-acoes {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 5px;
+  }
+  #jurisprudencias_wp .header-tabela-personalizado th:nth-child(3) {
+    text-align: center;
+  }
+  
+  #jurisprudencias_wp .modal-content {
+    height: 70vh;
+  }
+  
+  #jurisprudencias_wp .modal-body {
+    background-color: var(--branco-fundo);
+    overflow-y: scroll;
+  }
+  
+  #jurisprudencias_wp .modal-backdrop {
+    width: 100% !important;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  #jurisprudencias_wp #acordao_descricao,
+  #jurisprudencias_wp #ementa_descricao {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    line-height: 1.5em;
+    max-height: 4.5em;
+  }
+  
+  #jurisprudencias_wp #acordao_descricao.expandir,
+  #jurisprudencias_wp #ementa_descricao.expandir {
+    -webkit-line-clamp: unset;
+    max-height: unset;
+  }
+  
+  #jurisprudencias_wp .previa-ementa {
+    max-height: 3em;
+    overflow: hidden;
+    line-height: 1.5em;
+    cursor: pointer !important;
+  }
+  
+  #jurisprudencias_wp .previa-ementa.mostrar-tudo {
+    max-height: none;
+    cursor: pointer !important;
+  }
+
+  
+
+  #jurisprudencias_wp .custom-text {
+    text-align: justify;
+  }
+
+  #jurisprudencias_wp .btn-blue{
+    background-color: var(--azul-secundario);
+  }
+  #dados_printf .dado-tabela{
+    flex-direction: column;
+    gap: unset;
+    margin-bottom: 10px;
+  }
+  
+  @media screen and (max-width: 920px) {
+    #jurisprudencias_wp .margem-personalizada {
+      margin-top: 1rem;
+    }
+    #jurisprudencias_wp .header-tabela-personalizado {
+      display: none;
+    }
+    #jurisprudencias_wp .body-tabela-personalizado tr {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+    #jurisprudencias_wp .conteudo-botoes {
+      justify-content: start !important;
+      margin-top: 2rem;
+    }
+    #jurisprudencias_wp .dado-tabela {
+      justify-content: space-between;
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+    #jurisprudencias_wp .controlador-lista {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
+    #jurisprudencias_wp .dado-tabela{
+      flex-direction: column;
+      margin-bottom: 20px;
+      line-height: 15px;
+    }
+  }
+  
+  
+  
