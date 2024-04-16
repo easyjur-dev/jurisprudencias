@@ -152,16 +152,14 @@ function carregaListaJurisprudencias(page=1) {
   dadosPesquisa = removeBlankAttributes(dadosPesquisa)
   dadosPesquisa.page = page
   let params = (new URLSearchParams(dadosPesquisa)).toString()
-  console.log(params);
   $.ajax({
-    url: "http://localhost:7071/api/search?"+params,
+    url: "https://magnolio.azurewebsites.net/api/search?"+params,
     method: "GET",
     dataType: "json",
     beforeSend: function (xhr) {
       //mostrarLoader("Carregando lista de pop-ups cadastrados, por favor aguarde!");
     },
     success: function (response, textStatus, xhr) {
-      console.log(response.results);
       let template_lista = retornaTemplateJurisprudeciaLista(response.results);
       $("#corpo_listagem_tabela").html(template_lista);
 
