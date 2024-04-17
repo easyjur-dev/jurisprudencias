@@ -98,6 +98,8 @@ function montaPaginasPosteriores(atual, max)
 function retornaTemplatePaginacao(paginacao)
 {
 
+    console.log(paginacao)
+
     let paginas = []
     const atual = paginacao.current
 

@@ -182,17 +182,10 @@ function carregaListaJurisprudencias(page=1) {
   });
 }
 
-function pesquisarJurisprudencia(e, page = 1) {
-  e.preventDefault()
-  let dadosPesquisa = retornaDadosPesquisa();
-  dadosPesquisa.page = page
-
-  carregaListaJurisprudencias(dadosPesquisa);
-}
 
 function retornaDadosPesquisa() {
   return {
-    q: $("#nome_ementa_acordao").val(),
+    q: $("#nome_ementa_acordao").val() ?? ' ',
     with: $("#contem_palavra").val(),
     without: $("#nao_contem_palavra").val(),
     numeroProcesso: $("#numero_processo").val(),
@@ -232,3 +225,11 @@ function limparDadosPesquisa() {
   $('#checkbox_stj').prop('checked', false);
   $('#checkbox_tst').prop('checked', false);
 }
+
+
+$('#search-btn').click(e => {
+
+  e.preventDefault();
+  carregaListaJurisprudencias()
+  return false
+})
