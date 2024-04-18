@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $("#numero_processo").mask("0#");
+  //$("#numero_processo").mask("0#");
 
   carregaListaJurisprudencias();
 });
@@ -153,7 +153,8 @@ function carregaListaJurisprudencias(page=1) {
   dadosPesquisa.page = page
   let params = (new URLSearchParams(dadosPesquisa)).toString()
   $.ajax({
-    url: "https://magnolio.azurewebsites.net/api/search?"+params,
+    //url: "https://magnolio.azurewebsites.net/api/search?"+params,
+    url: "http://localhost:7071/api/search?"+params,
     method: "GET",
     dataType: "json",
     beforeSend: function (xhr) {
@@ -191,16 +192,17 @@ function retornaDadosPesquisa() {
     numeroProcesso: $("#numero_processo").val(),
     orgaoJudicante: $("#orgao_judicante").val(),
     relator: $("#ministo_relator").val(),
-    data_pub_inicio: $("#data_inicio_publicacao").val(),
-    data_pub_fim: $("#data_fim_publicacao").val(),
-    data_julgamento_inicio: $("#data_inicio_julgamento").val(),
-    data_julgamento_fim: $("#data_fim_julgamento").val(),
+    data_pub_inicio: $("#data_inicio_publicacao").val().split('/').reverse().join('-'),
+    data_pub_fim: $("#data_fim_publicacao").val().split('/').reverse().join('-'),
+    data_julgamento_inicio: $("#data_inicio_julgamento").val().split('/').reverse().join('-'),
+    data_julgamento_fim: $("#data_fim_julgamento").val().split('/').reverse().join('-'),
     classeProcessual: $("#classe_processo").val(),
     classeProcessual: $("#classe_processo").val(),
     ordemListagem: $("#ordenar_listagem").val(),
 
     checkboxSTJ: $('#checkbox_stj').is(':checked') ? 1 : 0,
     checkboxTST: $('#checkbox_tst').is(':checked') ? 1 : 0,
+    checkboxSTF: $('#checkbox_stf').is(':checked') ? 1 : 0,
   };
 
 }
@@ -224,6 +226,7 @@ function limparDadosPesquisa() {
 
   $('#checkbox_stj').prop('checked', false);
   $('#checkbox_tst').prop('checked', false);
+  $('#checkbox_stf').prop('checked', false);
 }
 
 

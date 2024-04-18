@@ -27,18 +27,8 @@ const template_jurisprudencia = (item) => `
         </span>
 
         <span class="dado-tabela">
-            <span id="data_fim_pubicacao" class="titulo">Data Final da Publicação:</span>
-            <span>28/03/2024</span>
-        </span>
-
-        <span class="dado-tabela">
             <span id="dataj" class="titulo">Data do Julgamento:</span>
             <span>${formatarDataISO(item.data_julgamento.raw)}</span>
-        </span>
-
-        <span class="dado-tabela">
-            <span id="dataj" class="titulo">Data Final do Julgamento:</span>
-            <span>03/07/2024</span>
         </span>
 
         <a class="icon-link d-none" href="#"><i class="fa-solid fa-download "></i> Download da decisão
@@ -98,14 +88,15 @@ function montaPaginasPosteriores(atual, max)
 function retornaTemplatePaginacao(paginacao)
 {
 
-    console.log(paginacao)
-
     let paginas = []
     const atual = paginacao.current
 
     paginas.push(fazBotaoPaginacao(1))
-    paginas.push(...montaPaginasAnteriores(atual))
-    paginas.push(fazBotaoPaginacao(atual))
+    if(atual !== 1)
+    {
+        paginas.push(...montaPaginasAnteriores(atual))
+        paginas.push(fazBotaoPaginacao(atual))
+    }
     paginas.push(...montaPaginasPosteriores(atual, paginacao.total_pages))
 
     
@@ -130,11 +121,11 @@ function retornaTemplatePaginacao(paginacao)
         carregaListaJurisprudencias(page)
     })
     $("#page-prev").click(e => {
-        if(atual == 1) return
+        if(atual === 1) return
         carregaListaJurisprudencias(atual - 1)
     })
     $("#page-next").click(e => {
-        if(atual == paginacao.total_pages) return
+        if(atual === paginacao.total_pages) return
         carregaListaJurisprudencias(atual + 1)
     })
 }
@@ -160,6 +151,8 @@ function retornaUrlJurisprudencia(id){
 }
 
 function abrirUrlJurisprudencia(id){
+    const splitted = id.split('|')
+    id = splitted[0].split('-').pop() + '-' + splitted[1]
     const url = retornaUrlJurisprudencia(id);
     window.open(url, '_blank');
 }
