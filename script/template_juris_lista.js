@@ -13,7 +13,7 @@ const template_jurisprudencia = (item) => `
 
         <span class="dado-tabela">
             <span id="orgao_judicante" class="titulo">Órgão Judicante:</span>
-            <span>${item.orgao_judicante.raw}</span>
+            <span>${item.orgao_judicante ? item.orgao_judicante.raw : item.orgado_judicante.raw}</span>
         </span>
 
         <span class="dado-tabela">
