@@ -15,21 +15,25 @@
 
 
 <body id="jurisprudencias_wp">
-    <div id="loader_easy" style="display: none;"></div>
     <header class="header">
         <nav class="navbar">
-            <div class="container-fluid">
+            <div class="container-fluid" style="width: 90%;">
                 <span class="navbar-brand mb-0 h1">
-                    <img id="logo-jurisprudencia" src="assets/img/logo-branca.svg" alt="Logo_EasyJur" />
+                    <img id="logo-jurisprudencia" src="assets/img/logo_easyjur_principal.png" alt="Logo_EasyJur" />
                 </span>
             </div>
         </nav>
     </header>
-    <section class="row justify-content-center">
+    <figure>
+        <figcaption>
+            <h1 class="fs-1 titulo-modulo">Jurisprudências</h1>
+        </figcaption>
+    </figure>
+
+    <section id="campo_de_pesquisa" class="row justify-content-center">
         <div class="card mt-3 col-12">
             <div class="card-body">
                 <div class="d-flex align-items-baseline justify-content-between">
-                    <h1 class="fs-3 titulo-modulo">Jurisprudências</h1>
                     <!--
                     <button class="btn botao-impressora d-flex align-items-center justify-content-center" type="submit" style="height: 3rem; width: 3rem" title="Imprimir Jurisprudências" data-bs-toggle="modal" data-bs-target="#imprimi_listagem">
                         <i class="fa-solid fa-print"></i>
@@ -83,11 +87,11 @@
 
                     <div id="acoes" class="col-md-6 margem-personalizada">
                         <div class="d-flex gap-2">
-                            <button class="btn botao-pesquisa d-flex align-items-center justify-content-center gap-2" id="search-btn" style="height: 2rem; width: 12rem" title="Imprimir Jurisprudências">
+                            <button class="btn botao-pesquisa d-flex align-items-center justify-content-center gap-2" id="search-btn" style="height: 2rem; width: 12rem" title="Pesquisar Jurisprudências">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                                 <span class="d-none d-md-block">Pesquisar</span>
                             </button>
-                            <button class="btn botao-limpa-filtro d-flex align-items-center justify-content-center gap-2" onclick="limparDadosPesquisa();" style="height: 2rem; width: 12rem" title="Imprimir Jurisprudências">
+                            <button class="btn botao-limpa-filtro d-flex align-items-center justify-content-center gap-2" onclick="limparDadosPesquisa();" style="height: 2rem; width: 12rem" title="Limpar Filtro">
                                 <i class="fa-solid fa-eraser"></i>
                                 <span class="d-none d-md-block">Limpar Filtro</span>
                             </button>
@@ -137,7 +141,7 @@
         </div>
     </section>
 
-    <section class="row justify-content-center">
+    <section id="campo_de_resultado"  class="row justify-content-center">
         <div class="card mt-3">
             <div class="card-body">
                 <table class="table table-striped">

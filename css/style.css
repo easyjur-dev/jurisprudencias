@@ -1,20 +1,9 @@
-/**
- * Theme Name:        EasyJur Jurisprudências
- * Theme URI:         https://easyjur.com
- * Description:       Acesse jurisprudências atualizadas com apenas um clique de busca.
- * Version:           1.0.0
- * Author:            EasyJur Technology
- * Author URI:        https://easyjur.com
- */
-
-
-
-
  :root {
     --azul-base: #151546;
     --branco: #fff;
     --cinza: #666;
     --vermelho: #f21f3c;
+    --botao-personalizado: linear-gradient(to right, #f21f3c 0%, #a91f40 51%, #f21f3c 100%);
     --branco-fundo: #ececec;
     --azul-secundario: #2784b1;
     --azul-secundario-hover: #05608c;
@@ -29,7 +18,7 @@
   }
   
   #jurisprudencias_wp .navbar {
-    background-color: var(--azul-base);
+    background-color: var(--branco);
   }
   
   #jurisprudencias_wp .card {
@@ -60,16 +49,13 @@
   #jurisprudencias_wp .botao-primario:hover,
   #jurisprudencias_wp .botao-pesquisa:hover {
     background-color: var(--azul-secundario-hover);
-    color: var(--branco);
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.35);
-    transform: scale(0.9);
   }
   
   #jurisprudencias_wp .botao-secundario,
   #jurisprudencias_wp .botao-limpa-filtro {
     background-color: var(--cinza-secundario);
     color: var(--branco);
-    transition: 0.3s;
   }
   
   #jurisprudencias_wp .botao-secundario:hover,
@@ -77,20 +63,21 @@
     background-color: var(--azul-secundario-hover);
     color: var(--branco);
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.35);
-    transform: scale(0.9);
   }
-  
-  #jurisprudencias_wp .titulo-modulo::after {
+  #jurisprudencias_wp .titulo-modulo{
+    color: var(--azul-base);
+  }
+  #jurisprudencias_wp .titulo-modulo::before {
     content: "";
-    height: 2px;
+    height: 10px;
+    width: 10px;
     background-color: var(--vermelho);
-    width: 200px;
-    display: block;
-    margin-top: 3px;
+    display: inline-block;
+    margin: 0 10px;
   }
   
   #logo-jurisprudencia {
-    width: 150px;
+    width: 170px;
   }
   
   #jurisprudencias_wp .inative {
@@ -183,7 +170,20 @@
     gap: unset;
     margin-bottom: 10px;
   }
+
+  figure{
+    background-image: url(../assets/img/bg.jpg);
+    width: 100%;
+    height: 15rem;
+    display: flex;
+    padding: 3.5rem;
+  }
   
+  #campo_de_resultado,
+  #campo_de_pesquisa{
+    position: relative;
+    top: -100px;
+  }
   @media screen and (max-width: 920px) {
     #jurisprudencias_wp .margem-personalizada {
       margin-top: 1rem;
@@ -206,6 +206,11 @@
   }
   
   @media screen and (max-width: 576px) {
+    figure{
+      display: flex;
+      justify-content: center;
+      }
+    
     #jurisprudencias_wp .controlador-lista {
       display: flex;
       flex-wrap: wrap;
