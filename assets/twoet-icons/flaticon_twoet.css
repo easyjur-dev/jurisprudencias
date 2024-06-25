@@ -1,0 +1,200 @@
+@font-face {
+    font-family: "flaticon_twoet";
+    src: url("font/flaticon_twoet.ttf?3a89288b7c71b962b9a42b92f161c7d8") format("truetype"),
+url("font/flaticon_twoet.woff?3a89288b7c71b962b9a42b92f161c7d8") format("woff"),
+url("font/flaticon_twoet.woff2?3a89288b7c71b962b9a42b92f161c7d8") format("woff2"),
+url("font/flaticon_twoet.eot?3a89288b7c71b962b9a42b92f161c7d8#iefix") format("embedded-opentype"),
+url("font/flaticon_twoet.svg?3a89288b7c71b962b9a42b92f161c7d8#flaticon_twoet") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon_twoet !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-ip-address:before {
+    content: "\f101";
+}
+.flaticon-cloud-network:before {
+    content: "\f102";
+}
+.flaticon-freelance:before {
+    content: "\f103";
+}
+.flaticon-hosting:before {
+    content: "\f104";
+}
+.flaticon-wifi-connection:before {
+    content: "\f105";
+}
+.flaticon-fiber:before {
+    content: "\f106";
+}
+.flaticon-tv:before {
+    content: "\f107";
+}
+.flaticon-satellite:before {
+    content: "\f108";
+}
+.flaticon-smart-tv:before {
+    content: "\f109";
+}
+.flaticon-energy-management:before {
+    content: "\f10a";
+}
+.flaticon-network-cable:before {
+    content: "\f10b";
+}
+.flaticon-smart-tv-1:before {
+    content: "\f10c";
+}
+.flaticon-home:before {
+    content: "\f10d";
+}
+.flaticon-internet-of-things:before {
+    content: "\f10e";
+}
+.flaticon-quote:before {
+    content: "\f10f";
+}
+.flaticon-devil:before {
+    content: "\f110";
+}
+.flaticon-ghost:before {
+    content: "\f111";
+}
+.flaticon-submachine-gun:before {
+    content: "\f112";
+}
+.flaticon-creepy-ghost:before {
+    content: "\f113";
+}
+.flaticon-heart:before {
+    content: "\f114";
+}
+.flaticon-cinema:before {
+    content: "\f115";
+}
+.flaticon-maneki-neko:before {
+    content: "\f116";
+}
+.flaticon-thriller:before {
+    content: "\f117";
+}
+.flaticon-film:before {
+    content: "\f118";
+}
+.flaticon-magic-wand:before {
+    content: "\f119";
+}
+.flaticon-secure-shield:before {
+    content: "\f11a";
+}
+.flaticon-global-network:before {
+    content: "\f11b";
+}
+.flaticon-wifi:before {
+    content: "\f11c";
+}
+.flaticon-cloud-network-1:before {
+    content: "\f11d";
+}
+.flaticon-efficiency:before {
+    content: "\f11e";
+}
+.flaticon-watching-tv:before {
+    content: "\f11f";
+}
+.flaticon-internet:before {
+    content: "\f120";
+}
+.flaticon-network:before {
+    content: "\f121";
+}
+.flaticon-security:before {
+    content: "\f122";
+}
+.flaticon-rise:before {
+    content: "\f123";
+}
+.flaticon-wireless:before {
+    content: "\f124";
+}
+.flaticon-alarm-clock:before {
+    content: "\f125";
+}
+.flaticon-star:before {
+    content: "\f126";
+}
+.flaticon-wifi-signal:before {
+    content: "\f127";
+}
+.flaticon-mouse:before {
+    content: "\f128";
+}
+.flaticon-rocket:before {
+    content: "\f129";
+}
+.flaticon-lock:before {
+    content: "\f12a";
+}
+.flaticon-mail:before {
+    content: "\f12b";
+}
+.flaticon-love:before {
+    content: "\f12c";
+}
+.flaticon-gun:before {
+    content: "\f12d";
+}
+.flaticon-stopwatch:before {
+    content: "\f12e";
+}
+.flaticon-smart-tv-2:before {
+    content: "\f12f";
+}
+.flaticon-price-tag:before {
+    content: "\f130";
+}
+.flaticon-24-hours:before {
+    content: "\f131";
+}
+.flaticon-design:before {
+    content: "\f132";
+}
+.flaticon-megaphone:before {
+    content: "\f133";
+}
+.flaticon-programming:before {
+    content: "\f134";
+}
+.flaticon-hacker:before {
+    content: "\f135";
+}
+.flaticon-piggy-bank:before {
+    content: "\f136";
+}
+.flaticon-portfolio:before {
+    content: "\f137";
+}
+.flaticon-healthcare:before {
+    content: "\f138";
+}
+.flaticon-documents:before {
+    content: "\f139";
+}
+.flaticon-pin:before {
+    content: "\f13a";
+}
+.flaticon-call:before {
+    content: "\f13b";
+}
+.flaticon-gmail:before {
+    content: "\f13c";
+}

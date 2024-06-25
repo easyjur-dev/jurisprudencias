@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="assets/icons/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="assets/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/date-picker/jquery-ui.min.css" />
+    <link rel="stylesheet" href="assets/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="assets/jquery-confirm/v3.3.4/jquery-confirm.min.css">
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>EasyJur Jurisprudências</title>
+</head>
+
+
+<body id="jurisprudencias_tst">
+    <header class="header">
+        <nav class="navbar">
+            <div class="container-fluid" style="width: 90%;">
+                <span class="navbar-brand mb-0 h1">
+                    <a href="index.html">
+                        <img id="logo" src="assets/img/logo_easyjur.png" alt="Logomarca EasyJur" style="width: 170px;">
+                    </a>
+                </span>
+            </div>
+        </nav>
+    </header>
+    <figure>
+        <figcaption>
+            <h1 class="fs-1 titulo-modulo">Jurisprudências TST</h1>
+        </figcaption>
+    </figure>
+
+    <section id="campo_de_resultado_tst"  class="row justify-content-center">
+        <div class="card mt-3">
+            <div class="card-body">
+                <table class="table table-striped">
+                    <thead class="header-tabela-personalizado">
+                        <tr>
+                            <th style="width: 25%">Processo</th>
+                            <th style="width: 60%">Ementa</th>
+                            <th style="width: 15%">Ações</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="corpo_listagem_tabela_tst" class="body-tabela-personalizado">
+                    </tbody>
+                </table>
+
+                <div class="d-flex align-items-center justify-content-center">
+                    <footer aria-label="Page navigation example">
+                        <ul class="pagination pagination-container">
+                        </ul>
+                    </footer>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <script src="assets/jquery/jquery-3.7.1.min.js"></script>
+    <script src="assets/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="assets/font-awesome/6.5.1/js/all.min.js"></script>
+    <script src="assets/date-picker/jquery-ui.min.js"></script>
+    <script src="assets/jquery-mask/1.14.16/jquery.mask.min.js"></script>
+    <script src="assets/html2pdfjs/html2pdf.bundle.min.js"></script>
+    <script src="assets/jquery-confirm/v3.3.4/jquery-confirm.min.js"></script>
+    <script src="script/template_juris_lista.js"></script>
+    <script src="script/jurisprudencias.js"></script>
+
+
+</body>
+
+</html>

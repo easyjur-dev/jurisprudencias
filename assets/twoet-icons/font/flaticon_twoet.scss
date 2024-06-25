@@ -1,0 +1,265 @@
+$flaticon_twonet-font: "flaticon_twonet";
+
+@font-face {
+    font-family: $flaticon_twonet-font;
+    src: url("./flaticon_twonet.ttf?3a89288b7c71b962b9a42b92f161c7d8") format("truetype"),
+url("./flaticon_twonet.woff?3a89288b7c71b962b9a42b92f161c7d8") format("woff"),
+url("./flaticon_twonet.woff2?3a89288b7c71b962b9a42b92f161c7d8") format("woff2"),
+url("./flaticon_twonet.eot?3a89288b7c71b962b9a42b92f161c7d8#iefix") format("embedded-opentype"),
+url("./flaticon_twonet.svg?3a89288b7c71b962b9a42b92f161c7d8#flaticon_twonet") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon_twonet !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+$flaticon_twonet-map: (
+    "ip-address": "\f101",
+    "cloud-network": "\f102",
+    "freelance": "\f103",
+    "hosting": "\f104",
+    "wifi-connection": "\f105",
+    "fiber": "\f106",
+    "tv": "\f107",
+    "satellite": "\f108",
+    "smart-tv": "\f109",
+    "energy-management": "\f10a",
+    "network-cable": "\f10b",
+    "smart-tv-1": "\f10c",
+    "home": "\f10d",
+    "internet-of-things": "\f10e",
+    "quote": "\f10f",
+    "devil": "\f110",
+    "ghost": "\f111",
+    "submachine-gun": "\f112",
+    "creepy-ghost": "\f113",
+    "heart": "\f114",
+    "cinema": "\f115",
+    "maneki-neko": "\f116",
+    "thriller": "\f117",
+    "film": "\f118",
+    "magic-wand": "\f119",
+    "secure-shield": "\f11a",
+    "global-network": "\f11b",
+    "wifi": "\f11c",
+    "cloud-network-1": "\f11d",
+    "efficiency": "\f11e",
+    "watching-tv": "\f11f",
+    "internet": "\f120",
+    "network": "\f121",
+    "security": "\f122",
+    "rise": "\f123",
+    "wireless": "\f124",
+    "alarm-clock": "\f125",
+    "star": "\f126",
+    "wifi-signal": "\f127",
+    "mouse": "\f128",
+    "rocket": "\f129",
+    "lock": "\f12a",
+    "mail": "\f12b",
+    "love": "\f12c",
+    "gun": "\f12d",
+    "stopwatch": "\f12e",
+    "smart-tv-2": "\f12f",
+    "price-tag": "\f130",
+    "24-hours": "\f131",
+    "design": "\f132",
+    "megaphone": "\f133",
+    "programming": "\f134",
+    "hacker": "\f135",
+    "piggy-bank": "\f136",
+    "portfolio": "\f137",
+    "healthcare": "\f138",
+    "documents": "\f139",
+    "pin": "\f13a",
+    "call": "\f13b",
+    "gmail": "\f13c",
+);
+
+.flaticon-ip-address:before {
+    content: map-get($flaticon_twonet-map, "ip-address");
+}
+.flaticon-cloud-network:before {
+    content: map-get($flaticon_twonet-map, "cloud-network");
+}
+.flaticon-freelance:before {
+    content: map-get($flaticon_twonet-map, "freelance");
+}
+.flaticon-hosting:before {
+    content: map-get($flaticon_twonet-map, "hosting");
+}
+.flaticon-wifi-connection:before {
+    content: map-get($flaticon_twonet-map, "wifi-connection");
+}
+.flaticon-fiber:before {
+    content: map-get($flaticon_twonet-map, "fiber");
+}
+.flaticon-tv:before {
+    content: map-get($flaticon_twonet-map, "tv");
+}
+.flaticon-satellite:before {
+    content: map-get($flaticon_twonet-map, "satellite");
+}
+.flaticon-smart-tv:before {
+    content: map-get($flaticon_twonet-map, "smart-tv");
+}
+.flaticon-energy-management:before {
+    content: map-get($flaticon_twonet-map, "energy-management");
+}
+.flaticon-network-cable:before {
+    content: map-get($flaticon_twonet-map, "network-cable");
+}
+.flaticon-smart-tv-1:before {
+    content: map-get($flaticon_twonet-map, "smart-tv-1");
+}
+.flaticon-home:before {
+    content: map-get($flaticon_twonet-map, "home");
+}
+.flaticon-internet-of-things:before {
+    content: map-get($flaticon_twonet-map, "internet-of-things");
+}
+.flaticon-quote:before {
+    content: map-get($flaticon_twonet-map, "quote");
+}
+.flaticon-devil:before {
+    content: map-get($flaticon_twonet-map, "devil");
+}
+.flaticon-ghost:before {
+    content: map-get($flaticon_twonet-map, "ghost");
+}
+.flaticon-submachine-gun:before {
+    content: map-get($flaticon_twonet-map, "submachine-gun");
+}
+.flaticon-creepy-ghost:before {
+    content: map-get($flaticon_twonet-map, "creepy-ghost");
+}
+.flaticon-heart:before {
+    content: map-get($flaticon_twonet-map, "heart");
+}
+.flaticon-cinema:before {
+    content: map-get($flaticon_twonet-map, "cinema");
+}
+.flaticon-maneki-neko:before {
+    content: map-get($flaticon_twonet-map, "maneki-neko");
+}
+.flaticon-thriller:before {
+    content: map-get($flaticon_twonet-map, "thriller");
+}
+.flaticon-film:before {
+    content: map-get($flaticon_twonet-map, "film");
+}
+.flaticon-magic-wand:before {
+    content: map-get($flaticon_twonet-map, "magic-wand");
+}
+.flaticon-secure-shield:before {
+    content: map-get($flaticon_twonet-map, "secure-shield");
+}
+.flaticon-global-network:before {
+    content: map-get($flaticon_twonet-map, "global-network");
+}
+.flaticon-wifi:before {
+    content: map-get($flaticon_twonet-map, "wifi");
+}
+.flaticon-cloud-network-1:before {
+    content: map-get($flaticon_twonet-map, "cloud-network-1");
+}
+.flaticon-efficiency:before {
+    content: map-get($flaticon_twonet-map, "efficiency");
+}
+.flaticon-watching-tv:before {
+    content: map-get($flaticon_twonet-map, "watching-tv");
+}
+.flaticon-internet:before {
+    content: map-get($flaticon_twonet-map, "internet");
+}
+.flaticon-network:before {
+    content: map-get($flaticon_twonet-map, "network");
+}
+.flaticon-security:before {
+    content: map-get($flaticon_twonet-map, "security");
+}
+.flaticon-rise:before {
+    content: map-get($flaticon_twonet-map, "rise");
+}
+.flaticon-wireless:before {
+    content: map-get($flaticon_twonet-map, "wireless");
+}
+.flaticon-alarm-clock:before {
+    content: map-get($flaticon_twonet-map, "alarm-clock");
+}
+.flaticon-star:before {
+    content: map-get($flaticon_twonet-map, "star");
+}
+.flaticon-wifi-signal:before {
+    content: map-get($flaticon_twonet-map, "wifi-signal");
+}
+.flaticon-mouse:before {
+    content: map-get($flaticon_twonet-map, "mouse");
+}
+.flaticon-rocket:before {
+    content: map-get($flaticon_twonet-map, "rocket");
+}
+.flaticon-lock:before {
+    content: map-get($flaticon_twonet-map, "lock");
+}
+.flaticon-mail:before {
+    content: map-get($flaticon_twonet-map, "mail");
+}
+.flaticon-love:before {
+    content: map-get($flaticon_twonet-map, "love");
+}
+.flaticon-gun:before {
+    content: map-get($flaticon_twonet-map, "gun");
+}
+.flaticon-stopwatch:before {
+    content: map-get($flaticon_twonet-map, "stopwatch");
+}
+.flaticon-smart-tv-2:before {
+    content: map-get($flaticon_twonet-map, "smart-tv-2");
+}
+.flaticon-price-tag:before {
+    content: map-get($flaticon_twonet-map, "price-tag");
+}
+.flaticon-24-hours:before {
+    content: map-get($flaticon_twonet-map, "24-hours");
+}
+.flaticon-design:before {
+    content: map-get($flaticon_twonet-map, "design");
+}
+.flaticon-megaphone:before {
+    content: map-get($flaticon_twonet-map, "megaphone");
+}
+.flaticon-programming:before {
+    content: map-get($flaticon_twonet-map, "programming");
+}
+.flaticon-hacker:before {
+    content: map-get($flaticon_twonet-map, "hacker");
+}
+.flaticon-piggy-bank:before {
+    content: map-get($flaticon_twonet-map, "piggy-bank");
+}
+.flaticon-portfolio:before {
+    content: map-get($flaticon_twonet-map, "portfolio");
+}
+.flaticon-healthcare:before {
+    content: map-get($flaticon_twonet-map, "healthcare");
+}
+.flaticon-documents:before {
+    content: map-get($flaticon_twonet-map, "documents");
+}
+.flaticon-pin:before {
+    content: map-get($flaticon_twonet-map, "pin");
+}
+.flaticon-call:before {
+    content: map-get($flaticon_twonet-map, "call");
+}
+.flaticon-gmail:before {
+    content: map-get($flaticon_twonet-map, "gmail");
+}
