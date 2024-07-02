@@ -1,8 +1,3 @@
-$(document).ready(function () {
-  //$("#numero_processo").mask("0#");
-
-  carregaListaJurisprudencias();
-});
 
 function mostraPesquisaAvacada() {
   $(".inative").toggle();
@@ -146,15 +141,14 @@ function removeBlankAttributes(obj) {
     return result;
 }
 
-function carregaListaJurisprudencias(page=1) {
+function carregaListaJurisprudencias(dadosPesquisa, page=1) {
 
-  let dadosPesquisa = retornaDadosPesquisa();
   dadosPesquisa = removeBlankAttributes(dadosPesquisa)
   dadosPesquisa.page = page
   let params = (new URLSearchParams(dadosPesquisa)).toString()
   $.ajax({
-    url: "https://magnolio.azurewebsites.net/api/search?"+params,
-    //url: "http://localhost:7071/api/search?"+params,
+    //url: "https://magnolio.azurewebsites.net/api/search?"+params,
+    url: "http://localhost:7071/api/search?"+params,
     method: "GET",
     dataType: "json",
     beforeSend: function (xhr) {

@@ -145,14 +145,15 @@ function mostraPreviaEmenta(id) {
 }
 
 function retornaUrlJurisprudencia(id){
-    let baseUrl = 'https://easyjur.com/blog/juris/';
+    let baseUrl = '/documento/';
+    console.log(id)
     return (baseUrl + id);
    
 }
 
 function abrirUrlJurisprudencia(id){
     const splitted = id.split('|')
-    id = splitted[0].split('-').pop() + '-' + splitted[1]
+    id = splitted[0] + '/' + splitted[1]
     const url = retornaUrlJurisprudencia(id);
     window.open(url, '_blank');
 }

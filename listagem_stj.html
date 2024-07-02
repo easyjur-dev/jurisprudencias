@@ -15,12 +15,12 @@
 </head>
 
 
-<body id="jurisprudencias_stj">
+<body id="jurisprudencias_wp">
     <header class="header">
         <nav class="navbar">
             <div class="container-fluid" style="width: 90%;">
                 <span class="navbar-brand mb-0 h1">
-                    <a href="index.html">
+                    <a href="/">
                         <img id="logo" src="assets/img/logo_easyjur.png" alt="Logomarca EasyJur" style="width: 170px;">
                     </a>
                 </span>
@@ -33,7 +33,7 @@
         </figcaption>
     </figure>
 
-    <section id="campo_de_resultado_stj"  class="row justify-content-center">
+    <section id="campo_de_resultado"  class="row justify-content-center">
         <div class="card mt-3">
             <div class="card-body">
                 <table class="table table-striped">
@@ -45,7 +45,7 @@
                         </tr>
                     </thead>
 
-                    <tbody id="corpo_listagem_tabela_stj" class="body-tabela-personalizado">
+                    <tbody id="corpo_listagem_tabela" class="body-tabela-personalizado">
                     </tbody>
                 </table>
 
@@ -69,6 +69,13 @@
     <script src="assets/jquery-confirm/v3.3.4/jquery-confirm.min.js"></script>
     <script src="script/template_juris_lista.js"></script>
     <script src="script/jurisprudencias.js"></script>
+    <script>
+        let dadosPesquisa = {
+            q: '',
+            checkboxSTJ: true
+        }
+        carregaListaJurisprudencias(dadosPesquisa)
+    </script>
 
 
 </body>

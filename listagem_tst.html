@@ -11,16 +11,16 @@
     <link rel="stylesheet" href="assets/jquery-confirm/v3.3.4/jquery-confirm.min.css">
     <link rel="stylesheet" href="css/style.css" />
 
-    <title>EasyJur Jurisprudências</title>
+    <title>EasyJur Jurisprudências | Tribunal Superior do Trabalho</title>
 </head>
 
 
-<body id="jurisprudencias_tst">
+<body id="jurisprudencias_wp">
     <header class="header">
         <nav class="navbar">
             <div class="container-fluid" style="width: 90%;">
                 <span class="navbar-brand mb-0 h1">
-                    <a href="index.html">
+                    <a href="/">
                         <img id="logo" src="assets/img/logo_easyjur.png" alt="Logomarca EasyJur" style="width: 170px;">
                     </a>
                 </span>
@@ -45,7 +45,7 @@
                         </tr>
                     </thead>
 
-                    <tbody id="corpo_listagem_tabela_tst" class="body-tabela-personalizado">
+                    <tbody id="corpo_listagem_tabela" class="body-tabela-personalizado">
                     </tbody>
                 </table>
 
@@ -69,6 +69,13 @@
     <script src="assets/jquery-confirm/v3.3.4/jquery-confirm.min.js"></script>
     <script src="script/template_juris_lista.js"></script>
     <script src="script/jurisprudencias.js"></script>
+    <script>
+        let dadosPesquisa = {
+            q: '',
+            checkboxTST: true
+        }
+        carregaListaJurisprudencias(dadosPesquisa)
+    </script>
 
 
 </body>

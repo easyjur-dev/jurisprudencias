@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/assets/icons/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="/assets/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/date-picker/jquery-ui.min.css" />
+    <link rel="stylesheet" href="/assets/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="/assets/jquery-confirm/v3.3.4/jquery-confirm.min.css">
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <title>EasyJur Jurisprudências</title>
+</head>
+<body id="jurisprudencias_wp">
+<header class="header">
+    <nav class="navbar">
+        <div class="container-fluid" style="width: 90%;">
+                <span class="navbar-brand mb-0 h1">
+                    <a href="/index.html">
+                        <img id="logo" src="/assets/img/logo_easyjur.png" alt="Logomarca EasyJur" style="width: 170px;">
+                    </a>
+                </span>
+        </div>
+    </nav>
+</header>
+<figure>
+    <figcaption>
+        <h1 class="fs-1 titulo-modulo"></h1>
+        <h3 id="court-label" style="text-indent: 30px; color: #000000aa; font-size: 15pt"></h3>
+        <h4 id="date-label" style="text-indent: 33px; color: #000000aa; font-size: 11pt"></h4>
+    </figcaption>
+</figure>
+
+<div id="doc-info">
+    <h2>Ementa</h2>
+    <div id="ementa">
+    </div>
+    <br>
+    <br>
+    <h2>Relator</h2>
+    <div id="relator">
+    </div>
+
+    <br>
+    <br>
+    <p style="text-align: right">
+        Publicado em <span id="data-publicado"></span>
+    </p>
+</div>
+
+<script src="/assets/jquery/jquery-3.7.1.min.js"></script>
+<script src="/assets/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="/assets/font-awesome/6.5.1/js/all.min.js"></script>
+<script src="/assets/date-picker/jquery-ui.min.js"></script>
+<script src="/assets/jquery-mask/1.14.16/jquery.mask.min.js"></script>
+<script src="/assets/html2pdfjs/html2pdf.bundle.min.js"></script>
+<script src="/assets/jquery-confirm/v3.3.4/jquery-confirm.min.js"></script>
+<script src="/script/doc.js"></script>
+<script>
+    atualizaPaginaDocumento()
+</script>
+</body>
+<style>
+    #doc-info{
+        display: block;
+        padding: 0 90px;
+        margin: auto;
+    }
+</style>
+</html>
