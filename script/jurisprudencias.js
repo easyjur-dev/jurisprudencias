@@ -147,8 +147,8 @@ function carregaListaJurisprudencias(dadosPesquisa, page=1) {
   dadosPesquisa.page = page
   let params = (new URLSearchParams(dadosPesquisa)).toString()
   $.ajax({
-    //url: "https://magnolio.azurewebsites.net/api/search?"+params,
-    url: "http://localhost:7071/api/search?"+params,
+    url: "https://magnolio.azurewebsites.net/api/search?"+params,
+    //url: "http://localhost:7071/api/search?"+params,
     method: "GET",
     dataType: "json",
     beforeSend: function (xhr) {
