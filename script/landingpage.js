@@ -82,6 +82,14 @@ tippy('#top3_3', {
   followCursor: 'true'
 });
 
+tippy('#lottie-container', {
+  content: 'Clique aqui para falar com especialista',
+  placement: 'top-start',
+  arrow: false,
+  animation: 'fade',
+  followCursor: 'true'
+});
+
 
 const navbar = $('#navbar');
 
@@ -97,3 +105,10 @@ function handleScroll() {
 
 window.addEventListener('scroll', handleScroll);
 
+var animation = lottie.loadAnimation({
+  container: document.getElementById('lottie-container'),
+  renderer: 'svg',
+  loop: true,
+  autoplay: true,
+  path: 'assets/lottie/whatsapp.json'
+});

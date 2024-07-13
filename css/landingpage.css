@@ -942,6 +942,14 @@ footer h6::after {
     animation-fill-mode: both;
 }
 
+.fig{
+    width: 100px;
+    right: 20px;
+    bottom: 20px;
+    position: fixed;
+    cursor: pointer;
+}
+
 @-webkit-keyframes slideInDown {
     0% {
         -webkit-transform: translateY(-100%);
@@ -1213,7 +1221,9 @@ footer h6::after {
     #laptop {
         display: none !important;
     }
-
+    .fig {
+        width: 70px;
+    }
 }
 
 @media only screen and (max-width : 575px) {
