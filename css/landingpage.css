@@ -131,6 +131,18 @@ table {
     border-spacing: 0;
 }
 
+
+::-webkit-scrollbar {
+    width: 12px; 
+}
+
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--main-pink-colour); 
+    border-radius: 6px; 
+}
+
+
 #slider_circle {
     background-image: url(../assets/img/background.jpg);
     width: 100%;
@@ -195,13 +207,7 @@ nav ul li a:hover::after {
 #mobile_list li svg path{
     fill: var(--main-blue-color);
 }
-footer{
-    background-image: url("../assets/img/Background_footer.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 920px;
-}
+
 #icon_links_footer {
     display: flex;
     justify-content: end;
@@ -483,7 +489,7 @@ footer h6::after {
     --main-white-color: #FFF;
     --main-gray-colour: #EDEFF4;
     --main-custon-btn: linear-gradient(to right, #f21f3c 0%, #a91f40 51%, #f21f3c 100%);
-
+    --main-pink-colour: #ceccf0;
 
     --twonet-primery: #ff1749;
     --twonet-secondary: #0F0F0F;
@@ -574,7 +580,7 @@ footer h6::after {
 }
 
 .icon-float-base {
-    z-index: -1;
+    z-index: 1;
     height: 100px;
     width: 100px;
     display: flex;
@@ -591,7 +597,7 @@ footer h6::after {
 
 .icon-float {
     top: 20%;
-    right: 11px;
+    right: -35px;
     rotate: 14deg;
     color: var(--main-white-color);
     background: var(--main-red-colour);
@@ -599,7 +605,7 @@ footer h6::after {
 
 .icon-float2 {
     top: 25%;
-    left: -50px;
+    left: -80px;
     rotate: 330deg;
     color: var(--main-blue-color);
     background-color: var(--twonet-neutral);
@@ -614,7 +620,7 @@ footer h6::after {
 }
 
 .icon-float4 {
-    top: 60px;
+    top: -50px;
     left: 25%;
     rotate: 15deg;
     color: var(--main-white-color);
@@ -630,7 +636,7 @@ footer h6::after {
 }
 
 .icon-float6{
-    top: 70px;
+    top: -70px;
     right: 15%;
     rotate: 22deg;
     color: var(--main-white-color);
@@ -906,8 +912,12 @@ footer h6::after {
     padding: 20px;
     font-size: 1.2rem;
 }
-#faq{
-    height: 1500px !important;
+#faq_bg{
+    background-image: url('../assets/img/Background_footer.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 50px;
 }
 
 .fixed-nav {
@@ -1123,7 +1133,10 @@ footer h6::after {
 }
 
 @media only screen and (max-width : 768px) {
-
+    #faq_bg{
+        padding: 10px;
+    }
+    
     #blog_sec,
     #grid_section {
         justify-content: center !important;
