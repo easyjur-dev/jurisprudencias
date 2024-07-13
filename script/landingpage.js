@@ -44,14 +44,17 @@ $(document).ready(function () {
 function removeActive() {
   $('#hamburger').removeClass('active');
 }
-
-
-tippy('#phone', {
-  content: 'Entre em contato conosco, estamos à disposição para atendê-lo.',
-  placement: 'bottom-end',
-  arrow: false,
-  animation: 'fade',
-  followCursor: 'true'
+hbspt.forms.create({
+  region: "na1",
+  portalId: "44225969",
+  formId: "81c21e13-3e2e-4036-a549-611535b34226",
+  target: "#hubspot-form"
+});
+hbspt.forms.create({
+  region: "na1",
+  portalId: "44225969",
+  formId: "206d5bd5-fb77-40d4-bf91-4602fe59a335",
+  target: "#whatsApp-form"
 });
 
 tippy('#instagram', {
@@ -132,3 +135,4 @@ function handleScroll() {
 }
 
 window.addEventListener('scroll', handleScroll);
+

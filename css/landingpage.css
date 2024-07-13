@@ -179,11 +179,39 @@ nav ul li a:hover::after {
     height: 90px;
 }
 
-footer {
-    background-image: url(../assets/img/Background_footer.png);
+#mobile_list li{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+#mobile_list li i{
+    font-size: 1.5rem;
+    color: var(--main-blue-color);
+}
+#mobile_list li svg{
+    height: 30px;
+    width: auto;
+}
+#mobile_list li svg path{
+    fill: var(--main-blue-color);
+}
+footer{
+    background-image: url("../assets/img/Background_footer.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    height: 920px;
+}
+#icon_links_footer {
+    display: flex;
+    justify-content: end;
+    gap: 5px ;
+}
+#icon_links_footer a{
+    background-color: var(--main-blue-color);
+    color: var(--main-white-color);
+    padding: 7px;
+    border-radius: 5px;
 }
 
 footer h6::after {
@@ -212,7 +240,9 @@ footer h6::after {
 .footer-descriptions div {
     width: 430px;
 }
-
+.accordion-body h6{
+    text-align: start !important;
+}
 .tippy-box {
     margin: 10px;
 }
@@ -388,7 +418,16 @@ footer h6::after {
     flex-direction: column;
 }
 
+.barra-abaixo::after{
+    content: "";
+    display: flex;
+    position: relative;
+    height: 2px;
+    background-color: var(--twonet-neutral);
+    top: 10px;
+    width: 100%;
 
+}
 
 .banner-shape {
     position: absolute;
@@ -559,11 +598,11 @@ footer h6::after {
 }
 
 .icon-float2 {
-    top: 30%;
-    left: 11px;
+    top: 25%;
+    left: -50px;
     rotate: 330deg;
     color: var(--main-blue-color);
-    background-image: url(../../assets/images/background.jpg);
+    background-color: var(--twonet-neutral);
 }
 
 .icon-float3 {
@@ -575,7 +614,7 @@ footer h6::after {
 }
 
 .icon-float4 {
-    top: 20px;
+    top: 60px;
     left: 25%;
     rotate: 15deg;
     color: var(--main-white-color);
@@ -591,7 +630,7 @@ footer h6::after {
 }
 
 .icon-float6{
-    top: -60px;
+    top: 70px;
     right: 15%;
     rotate: 22deg;
     color: var(--main-white-color);
@@ -863,8 +902,13 @@ footer h6::after {
     background-color: var(--main-gray-colour);
     box-shadow: inset 0 calc(-1* var(--bs-accordion-border-width)) 0 var(--bs-accordion-border-color);
 }
-
-
+#after_faq a{
+    padding: 20px;
+    font-size: 1.2rem;
+}
+#faq{
+    height: 1500px !important;
+}
 
 .fixed-nav {
     position: fixed !important;
@@ -872,12 +916,13 @@ footer h6::after {
     left: 0;
     right: 0;
     width: 100%;
-    z-index: 3 !important;
+    z-index: 999 !important;
     background-color: var(--main-white-color);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-
-
+.text-position{
+    text-align: right;
+}
 .slideInDown {
     -webkit-animation-name: slideInDown;
     animation-name: slideInDown;
@@ -926,6 +971,7 @@ footer h6::after {
 
 }
 
+
 /* Breakpoint personalizado para telas de notebook */
 @media (min-width: 1024px) and (max-width: 1366px) {
     #title h1 {
@@ -940,7 +986,7 @@ footer h6::after {
     #line_blocs {
         max-height: 470px;
     }
-
+ 
     #faq h6,
     #blog_sec h2,
     #grid_content h2 {
@@ -974,6 +1020,13 @@ footer h6::after {
 
 
 @media only screen and (max-width : 1024px) {
+    #icon_links_footer{
+        justify-content: center;
+        padding: 20px;
+    } 
+    .text-position{
+        text-align: center;
+    }
 
     #faq h6,
     #blog_sec h2,
