@@ -1,10 +1,10 @@
 $(document).ready(function () {
-    $('#doc-info').on('selectstart', function (e) {
+    $('#jurisprudencia_documento').on('selectstart', function (e) {
         e.preventDefault();
         return false;
     });
 
-    $('#doc-info').on('copy', function (e) {
+    $('#jurisprudencia_documento').on('copy', function (e) {
         e.preventDefault();
         return false;
     });
