@@ -1,3 +1,39 @@
+$(document).ready(function () {
+    $('#doc-info').on('selectstart', function (e) {
+        e.preventDefault();
+        return false;
+    });
+
+    $('#doc-info').on('copy', function (e) {
+        e.preventDefault();
+        return false;
+    });
+
+    document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+    });
+});
+
+function removeActive() {
+    $('#hamburger').removeClass('active');
+  }
+
+tippy('#doc-info', {
+    content: 'Cópia não permitida. Para ter acesso ao documento, por favor, preencha o formulário.',
+    placement: 'top-start',
+    arrow: false,
+    animation: 'fade',
+    followCursor: 'true'
+});
+
+hbspt.forms.create({
+    region: "na1",
+    portalId: "44225969",
+    formId: "81c21e13-3e2e-4036-a549-611535b34226",
+    target: "#hubspot-juris_entry"
+});
+
+
 async function buscaDocumento(engine, id) {
 
     const dadosPesquisa = {
@@ -6,15 +42,15 @@ async function buscaDocumento(engine, id) {
 
     let params = (new URLSearchParams(dadosPesquisa)).toString()
 
-    const resultado  = await  $.ajax({
-        //url: "https://magnolio.azurewebsites.net/api/document?"+params,
-        url: "http://localhost:7071/api/document?" + params,
+    const resultado = await $.ajax({
+        url: "https://magnolio.azurewebsites.net/api/document?" + params,
+        //url: "http://localhost:7071/api/document?" + params,
     });
 
     return resultado[0]
 }
 
-async function atualizaPaginaDocumento(){
+async function atualizaPaginaDocumento() {
     const path = window.document.URL
     const bits = path.split('/');
     const id = bits.pop()
