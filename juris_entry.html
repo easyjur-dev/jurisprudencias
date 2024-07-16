@@ -12,15 +12,48 @@
     <link rel="stylesheet" href="/assets/tippy/tippy.css">
     <link rel="stylesheet" href="/css/style.css" />
 
+    <script src="/assets/jquery/jquery-3.7.1.min.js"></script>
     <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
     <script>
+
+        var texto_emenda, link_teor, link_busca
+
+        function copiaEmentaLocal(){
+            navigator.clipboard.writeText(texto_emenda);
+            alert("Ementa copiada")
+        }
+
+        function allowUser(){
+            $("#hubspot-juris_entry").html(`
+                <div id="divzinhadoerik">
+                <a href="${link_teor}" target="_blank">Acessar Inteiro Teor</a>
+                <br>
+                <a href="${link_busca}" target="_blank">Acessar Consulta Processual</a>
+                <br>
+                <a type="button" onclick="copiaEmentaLocal()">Copiar Ementa</a>
+                </div>
+            `)
+        }
+
         hbspt.forms.create({
             region: "na1",
             portalId: "44225969",
-            formId: [
-                "81c21e13-3e2e-4036-a549-611535b34226",
-            ]
+            formId:
+                "81c21e13-3e2e-4036-a549-611535b34226"
+            ,
         });
+
+        window.addEventListener('message', (event) => {
+            if (
+                event.data.type === 'hsFormCallback' &&
+                event.data.eventName === 'onFormSubmitted'
+            ) {
+            }
+        });
+
+        setTimeout(() => {console.log('foi'); allowUser()}, 2000)
+
+        allowUser()
     </script>
 
     <meta name="robots" content="noindex, nofollow">
@@ -199,7 +232,6 @@
         </div>
     </section>
 
-    <script src="/assets/jquery/jquery-3.7.1.min.js"></script>
     <script src="/assets/bootstrap/bootstrap.bundle.min.js"></script>
     <script src="/assets/font-awesome/6.5.1/js/all.min.js"></script>
     <script src="/assets/date-picker/jquery-ui.min.js"></script>

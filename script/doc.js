@@ -68,5 +68,9 @@ async function atualizaPaginaDocumento() {
     $("#ementa").text(doc.ementa)
     $("#relator").text(doc.relator)
     $("#data-publicado").text(new Date(doc.data_publicacao_fonte).toLocaleDateString("pt-BR"))
+
+    texto_emenda = doc.ementa
+    link_teor = doc.link_inteiro_teor
+    link_busca = doc.link_consulta_processual
     console.log(doc)
 }
