@@ -386,6 +386,9 @@
    background-position: right center;
  }
 
+ .page-item{
+  cursor: pointer;
+ }
 
 @media screen and (max-width: 768px) {
   #actions_after_form{
