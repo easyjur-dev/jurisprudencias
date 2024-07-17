@@ -118,17 +118,17 @@ function retornaTemplatePaginacao(paginacao)
     $(".page-item").click(e => {
         const id = e.delegateTarget.id
         const page = id.split('-btn-')[1]
-        const dados_pesquisa = dadosPesquisa === undefined ? retornaDadosPesquisa() : dados_pesquisa
+        const dados_pesquisa = dadosPesquisa === undefined ? retornaDadosPesquisa() : dadosPesquisa
         carregaListaJurisprudencias(dados_pesquisa, page)
     })
     $("#page-prev").click(e => {
         if(atual === 1) return
-        const dados_pesquisa = dadosPesquisa === undefined ? retornaDadosPesquisa() : dados_pesquisa
+        const dados_pesquisa = dadosPesquisa === undefined ? retornaDadosPesquisa() : dadosPesquisa
         carregaListaJurisprudencias(dados_pesquisa, atual - 1)
     })
     $("#page-next").click(e => {
         if(atual === paginacao.total_pages) return
-        const dados_pesquisa = dadosPesquisa === undefined ? retornaDadosPesquisa() : dados_pesquisa
+        const dados_pesquisa = dadosPesquisa === undefined ? retornaDadosPesquisa() : dadosPesquisa
         carregaListaJurisprudencias(dados_pesquisa, atual + 1)
     })
 }
