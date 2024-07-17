@@ -51,33 +51,28 @@ const template_jurisprudencia = (item) => `
 </tr>
     `;
 
-function fazBotaoPaginacao(pagina)
-{
+function fazBotaoPaginacao(pagina) {
     return `
     <li class="page-item" id="page-btn-${pagina}"><a class="page-link">${pagina}</a></li>
     `;
 }
 
-function montaPaginasAnteriores(atual)
-{
+function montaPaginasAnteriores(atual) {
     let pagina = atual - 1
     let paginas = []
 
-    while(pagina > 1 && paginas.length < 5)
-    {
+    while (pagina > 1 && paginas.length < 5) {
         paginas.unshift(fazBotaoPaginacao(pagina))
         pagina--
     }
 
     return paginas
 }
-function montaPaginasPosteriores(atual, max)
-{
+function montaPaginasPosteriores(atual, max) {
     let pagina = atual + 1
     let paginas = []
 
-    while(pagina <= max && paginas.length < 5)
-    {
+    while (pagina <= max && paginas.length < 5) {
         paginas.push(fazBotaoPaginacao(pagina))
         pagina++
     }
@@ -85,21 +80,19 @@ function montaPaginasPosteriores(atual, max)
     return paginas
 }
 
-function retornaTemplatePaginacao(paginacao)
-{
+function retornaTemplatePaginacao(paginacao) {
 
     let paginas = []
     const atual = paginacao.current
 
     paginas.push(fazBotaoPaginacao(1))
-    if(atual !== 1)
-    {
+    if (atual !== 1) {
         paginas.push(...montaPaginasAnteriores(atual))
         paginas.push(fazBotaoPaginacao(atual))
     }
     paginas.push(...montaPaginasPosteriores(atual, paginacao.total_pages))
 
-    
+
 
 
     $(".pagination-container").html(`
@@ -113,26 +106,32 @@ function retornaTemplatePaginacao(paginacao)
     `)
 
 
-    $("#page-btn-"+atual).addClass('active')
+    $("#page-btn-" + atual).addClass('active')
 
-    $(".page-item").click(e => {
-        const id = e.delegateTarget.id
-        const page = id.split('-btn-')[1]
-        carregaListaJurisprudencias(page)
-    })
-    $("#page-prev").click(e => {
-        if(atual === 1) return
-        carregaListaJurisprudencias(atual - 1)
-    })
-    $("#page-next").click(e => {
-        if(atual === paginacao.total_pages) return
-        carregaListaJurisprudencias(atual + 1)
-    })
+    // Adicionar eventos de clique para itens da página
+    $(".page-item").off('click').on('click', function (e) {
+        const id = $(this).attr('id');
+        const page = id.split('-btn-')[1];
+        if (page) {
+            carregaListaJurisprudencias(page);
+        }
+    });
+    // Evento de clique para o botão anterior
+    $("#page-prev").off('click').on('click', function () {
+        if (atual > 1) {
+            carregaListaJurisprudencias(atual - 1);
+        }
+    });
+    $("#page-next").off('click').on('click', function () {
+        if (atual < paginacao.total_pages) {
+            carregaListaJurisprudencias(atual + 1);
+        }
+    });
 }
 
-function retornaTemplateJurisprudeciaLista(dados){
+function retornaTemplateJurisprudeciaLista(dados) {
     return dados.map(template_jurisprudencia);
-    
+
 }
 
 function formatarDataISO(dataISO) {
@@ -144,14 +143,14 @@ function mostraPreviaEmenta(id) {
     $(`.previa-ementa[data-id='${id}']`).toggleClass("mostrar-tudo");
 }
 
-function retornaUrlJurisprudencia(id){
+function retornaUrlJurisprudencia(id) {
     let baseUrl = '/documento/';
     console.log(id)
     return (baseUrl + id);
-   
+
 }
 
-function abrirUrlJurisprudencia(id){
+function abrirUrlJurisprudencia(id) {
     const splitted = id.split('|')
     id = splitted[0] + '/' + splitted[1]
     const url = retornaUrlJurisprudencia(id);
