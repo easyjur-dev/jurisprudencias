@@ -74,3 +74,5 @@ async function atualizaPaginaDocumento() {
     link_busca = doc.link_consulta_processual
     console.log(doc)
 }
+
+
