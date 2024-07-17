@@ -237,9 +237,13 @@ $('#search-btn').click(e => {
 
 function carregaLoader(){
   $('#campo_de_resultado').hide();
+  $('#campo_de_resultado_stf').hide();
+  $('#campo_de_resultado_tst').hide();
   $('.loader').fadeIn();
 }
 function fechaLoader(){
   $('#campo_de_resultado').show();
+  $('#campo_de_resultado_stf').show();
+  $('#campo_de_resultado_tst').show();
   $('.loader').hide();
 }

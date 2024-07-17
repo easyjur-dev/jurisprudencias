@@ -413,7 +413,7 @@
   border-radius: 50%;
   border: 9px solid;
   border-color: #dbdcef;
-  border-right-color: #474bff;
+  border-right-color: var(--azul-secundario);
   animation: spinner-d3wgkg 1s infinite linear;
 }
 
