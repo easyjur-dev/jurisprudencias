@@ -72,7 +72,6 @@ async function atualizaPaginaDocumento() {
     texto_emenda = doc.ementa
     link_teor = doc.link_inteiro_teor
     link_busca = doc.link_consulta_processual
-    console.log(doc)
 }
 
 
