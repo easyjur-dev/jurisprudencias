@@ -118,15 +118,18 @@ function retornaTemplatePaginacao(paginacao)
     $(".page-item").click(e => {
         const id = e.delegateTarget.id
         const page = id.split('-btn-')[1]
-        carregaListaJurisprudencias(page)
+        const dados_pesquisa = retornaDadosPesquisa()
+        carregaListaJurisprudencias(dados_pesquisa, page)
     })
     $("#page-prev").click(e => {
         if(atual === 1) return
-        carregaListaJurisprudencias(atual - 1)
+        const dados_pesquisa = retornaDadosPesquisa()
+        carregaListaJurisprudencias(dados_pesquisa, atual - 1)
     })
     $("#page-next").click(e => {
         if(atual === paginacao.total_pages) return
-        carregaListaJurisprudencias(atual + 1)
+        const dados_pesquisa = retornaDadosPesquisa()
+        carregaListaJurisprudencias(dados_pesquisa, atual + 1)
     })
 }
 
