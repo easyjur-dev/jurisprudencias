@@ -9,9 +9,9 @@ $(document).ready(function () {
         return false;
     });
 
-    //document.addEventListener('contextmenu', function (e) {
-    //    e.preventDefault();
-    //});
+    document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+    });
 });
 
 function removeActive() {
