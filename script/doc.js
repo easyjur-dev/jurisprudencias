@@ -63,7 +63,7 @@ async function atualizaPaginaDocumento() {
 
     window.document.title = "EasyJur Jurisprudência | " + doc.processo
     $(".titulo-modulo").text(doc.processo)
-    $("#court-label").text(doc.orgao + " - " + doc.orgao_judicante)
+    $("#court-label").text(doc.orgao +  (doc.orgao_judicante == undefined ? "" : " - " + doc.orgao_judicante))
     $("#date-label").text(new Date(doc.data_julgamento).toLocaleDateString("pt-BR"))
     $("#ementa").text(doc.ementa)
     $("#relator").text(doc.relator)

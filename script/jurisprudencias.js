@@ -143,6 +143,8 @@ function removeBlankAttributes(obj) {
 
 function carregaListaJurisprudencias(dadosPesquisa, page=1) {
 
+  console.log("chamou")
+
   dadosPesquisa = removeBlankAttributes(dadosPesquisa)
   dadosPesquisa.page = page
   let params = (new URLSearchParams(dadosPesquisa)).toString()
