@@ -240,8 +240,8 @@ function carregaLoader(){
   $('.loader').fadeIn();
 }
 function fechaLoader(){
+  $('.loader').hide();
   $('#campo_de_resultado').show();
   $('#campo_de_resultado_stf').show();
   $('#campo_de_resultado_tst').show();
-  $('.loader').hide();
 }
