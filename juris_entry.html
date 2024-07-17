@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/assets/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="/assets/jquery-confirm/v3.3.4/jquery-confirm.min.css">
     <link rel="stylesheet" href="/assets/tippy/tippy.css">
+    <link rel="stylesheet" href="/assets/toastR/toastr.min.css">
     <link rel="stylesheet" href="/css/style.css" />
 
     <script src="/assets/jquery/jquery-3.7.1.min.js"></script>
@@ -18,19 +19,19 @@
 
         var texto_emenda, link_teor, link_busca
 
-        function copiaEmentaLocal(){
+        function copiaEmentaLocal() {
             navigator.clipboard.writeText(texto_emenda);
-            alert("Ementa copiada")
+            confirmaCopia();
         }
 
-        function allowUser(){
+        function allowUser() {
             $("#hubspot-juris_entry").html(`
-                <div id="divzinhadoerik">
-                <a href="${link_teor}" target="_blank">Acessar Inteiro Teor</a>
-                <br>
-                <a href="${link_busca}" target="_blank">Acessar Consulta Processual</a>
-                <br>
-                <a type="button" onclick="copiaEmentaLocal()">Copiar Ementa</a>
+                <div id="actions_after_form">
+                    <a href="${link_teor}" target="_blank">Acessar Inteiro Teor</a>
+
+                    <a href="${link_busca}" target="_blank">Acessar Consulta Processual</a>
+
+                    <a type="button" onclick="copiaEmentaLocal()">Copiar Ementa</a>
                 </div>
             `)
         }
@@ -51,9 +52,33 @@
             }
         });
 
-        setTimeout(() => {console.log('foi'); allowUser()}, 2000)
+        setTimeout(() => { console.log('foi'); allowUser() }, 2000)
 
         allowUser()
+
+
+
+        function confirmaCopia() {
+            toastr.options = {
+                    "closeButton": true,
+                    "debug": false,
+                    "newestOnTop": false,
+                    "progressBar": true,
+                    "positionClass": "toast-bottom-left",
+                    "preventDuplicates": false,
+                    "onclick": null,
+                    "showDuration": "300",
+                    "hideDuration": "1000",
+                    "timeOut": "5000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                };
+                    toastr.success('Documento Copiado');
+        }
+
     </script>
 
     <meta name="robots" content="noindex, nofollow">
@@ -197,7 +222,7 @@
             </div>
         </nav>
     </header>
-    
+
     <figure>
         <figcaption class="container">
             <h1 class="fs-1 titulo-modulo"></h1>
@@ -212,7 +237,6 @@
         <div class="container">
             <div class="row py-5">
                 <div id="doc-info" class="col-lg-6 p-5 border position-relative">
-                    <!-- <div id="blur" class="add-backdrop"></div> -->
                     <h2 class="fs-1 fw-bold">Ementa</h2>
                     <p id="ementa" class="fs-5"></p>
                     <p id="relator" class="fs-5 fw-bold"></p>
@@ -232,6 +256,8 @@
         </div>
     </section>
 
+    <script src="assets/jquery/jquery-3.7.1.min.js"></script>
+    <script src="assets/toastR/toastr.min.js"></script>
     <script src="/assets/bootstrap/bootstrap.bundle.min.js"></script>
     <script src="/assets/font-awesome/6.5.1/js/all.min.js"></script>
     <script src="/assets/date-picker/jquery-ui.min.js"></script>

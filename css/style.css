@@ -335,11 +335,13 @@
    background-color: var(--main-pink-colour);
    border-radius: 6px;
  }
+
  #mobile_list li {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
+   display: flex;
+   gap: 10px;
+   align-items: center;
+ }
+
  #mobile_list li svg {
    height: 30px;
    width: auto;
@@ -348,10 +350,38 @@
  #mobile_list li svg path {
    fill: var(--main-blue-color);
  }
+ #actions_after_form{
+  width: 550px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+ #actions_after_form a {
+   background-size: 200% auto;
+   background-image: var(--main-custon-btn);
+   color: #fff;
+   padding: 10px;
+   height: 48px;
+   text-decoration: none;
+   border: none;
+   border-radius: 3px;
+   transition: 0.3s;
+   cursor: pointer;
+   font-weight: 500;
+   font-size: 1rem;
+   text-align: center;
+ }
 
-
+ #actions_after_form a:hover {
+   background-position: right center;
+ }
 
  @media screen and (max-width: 576px) {
+  #actions_after_form{
+    flex-direction: column;
+    align-items: start;
+  }
    figure {
      display: flex;
      align-items: center;
