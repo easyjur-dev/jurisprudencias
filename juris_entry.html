@@ -15,9 +15,10 @@
 
     <script src="/assets/jquery/jquery-3.7.1.min.js"></script>
     <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
-    <script>
+    <script src="/assets/toastR/toastr.min.js"></script> <!-- Adicione esta linha para incluir o toastr.min.js -->
 
-        var texto_emenda, link_teor, link_busca
+    <script>
+        var texto_emenda, link_teor, link_busca;
 
         function copiaEmentaLocal() {
             navigator.clipboard.writeText(texto_emenda);
@@ -42,15 +43,13 @@
                         <span class="d-none d-md-flex">Copiar Ementa</span>
                     </a>
                 </div>
-            `)
+            `);
         }
 
         hbspt.forms.create({
             region: "na1",
             portalId: "44225969",
-            formId:
-                "81c21e13-3e2e-4036-a549-611535b34226"
-            ,
+            formId: "81c21e13-3e2e-4036-a549-611535b34226",
         });
 
         window.addEventListener('message', (event) => {
@@ -58,24 +57,21 @@
                 event.data.type === 'hsFormCallback' &&
                 event.data.eventName === 'onFormSubmitted'
             ) {
+                // Ação a ser realizada após o envio do formulário
             }
         });
 
-        setTimeout(() => { console.log('foi'); allowUser() }, 2000)
+        setTimeout(() => { console.log('foi'); allowUser(); }, 2000);
 
-        allowUser()
-
-
+        allowUser();
 
         function confirmaCopia() {
             toastr.options.positionClass = 'toast-bottom-right'; // Personalização da posição
             toastr.success('Ementa copiada');
         }
-
     </script>
 
     <meta name="robots" content="noindex, nofollow">
-
     <title>EasyJur Jurisprudências</title>
 </head>
 
@@ -250,7 +246,6 @@
     </section>
 
     <script src="assets/jquery/jquery-3.7.1.min.js"></script>
-    <script src="assets/toastR/toastr.min.js"></script>
     <script src="/assets/bootstrap/bootstrap.bundle.min.js"></script>
     <script src="/assets/font-awesome/6.5.1/js/all.min.js"></script>
     <script src="/assets/date-picker/jquery-ui.min.js"></script>
