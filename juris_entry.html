@@ -18,13 +18,7 @@
         var texto_emenda, link_teor, link_busca;
 
         function copiaEmentaLocal() {
-            navigator.clipboard.writeText(texto_emenda).then(function () {
-                let toastEl = document.getElementById('copyToast');
-                let toast = new bootstrap.Toast(toastEl);
-                toast.show();
-            }).catch(function (err) {
-                console.error('Erro ao copiar a ementa: ', err);
-            });
+            navigator.clipboard.writeText(texto_emenda);
         }
 
         function allowUser() {
@@ -40,7 +34,7 @@
                         <span class="d-none d-md-flex">Acessar Consulta Processual</span>
                     </a>
 
-                    <a id="mostra_toast" class="fs-5 p-2" onclick="copiaEmentaLocal()">
+                    <a class="fs-5 p-2" onclick="copiaEmentaLocal()">
                         <i class="fa-solid fa-copy"></i> 
                         <span class="d-none d-md-flex">Copiar Ementa</span>
                     </a>
@@ -67,11 +61,6 @@
         setTimeout(() => { console.log('foi'); allowUser(); }, 2000);
 
         allowUser();
-
-        function confirmaCopia() {
-            toastr.options.positionClass = 'toast-bottom-left';
-            toastr.success('Ementa copiada');
-        }
     </script>
 
     <title>EasyJur Jurisprudências</title>
@@ -244,27 +233,6 @@
             </div>
         </div>
     </section>
-
-
-
-
-    <div class="toast-container position-fixed bottom-0 end-0 p-3">
-        <div id="copyToast" class="toast align-items-center border-0" role="alert" aria-live="assertive"
-            aria-atomic="true">
-            <div class="d-flex">
-                <div class="toast-body">
-                    Ementa copiada com sucesso!
-                </div>
-                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
-                    aria-label="Close"></button>
-            </div>
-        </div>
-    </div>
-
-
-
-
-
 
     <script src="/assets/jquery/jquery-3.7.1.min.js"></script>
     <script src="/assets/bootstrap/bootstrap.bundle.min.js"></script>
