@@ -120,7 +120,7 @@ function retornaTemplatePaginacao(paginacao)
             return
         const id = e.delegateTarget.id
         const page = id.split('-btn-')[1]
-        const dados_pesquisa = dadosPesquisa === undefined ? retornaDadosPesquisa() : dadosPesquisa
+        const dados_pesquisa = typeof dadosPesquisa === 'undefined' ? retornaDadosPesquisa() : dadosPesquisa
         carregaListaJurisprudencias(dados_pesquisa, page)
     })
 
@@ -128,13 +128,13 @@ function retornaTemplatePaginacao(paginacao)
     $("#page-prev").off('click')
     $("#page-prev").on('click', e => {
         if(atual === 1) return
-        const dados_pesquisa = dadosPesquisa === undefined ? retornaDadosPesquisa() : dadosPesquisa
+        const dados_pesquisa = typeof dadosPesquisa === 'undefined' ? retornaDadosPesquisa() : dadosPesquisa
         carregaListaJurisprudencias(dados_pesquisa, atual - 1)
     })
     $("#page-next").off('click')
     $("#page-next").on('click', e => {
         if(atual === paginacao.total_pages) return
-        const dados_pesquisa = dadosPesquisa === undefined ? retornaDadosPesquisa() : dadosPesquisa
+        const dados_pesquisa = typeof dadosPesquisa === 'undefined' ? retornaDadosPesquisa() : dadosPesquisa
         carregaListaJurisprudencias(dados_pesquisa, atual + 1)
     })
 }
