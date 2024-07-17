@@ -142,7 +142,6 @@ function removeBlankAttributes(obj) {
 }
 
 function carregaListaJurisprudencias(dadosPesquisa, page=1) {
-
   dadosPesquisa = removeBlankAttributes(dadosPesquisa)
   dadosPesquisa.page = page
   let params = (new URLSearchParams(dadosPesquisa)).toString()
@@ -152,9 +151,10 @@ function carregaListaJurisprudencias(dadosPesquisa, page=1) {
     method: "GET",
     dataType: "json",
     beforeSend: function (xhr) {
-      //mostrarLoader("Carregando lista de pop-ups cadastrados, por favor aguarde!");
+      carregaLoader();
     },
     success: function (response, textStatus, xhr) {
+      
       let template_lista = retornaTemplateJurisprudeciaLista(response.results);
       $("#corpo_listagem_tabela").html(template_lista);
 
@@ -172,7 +172,7 @@ function carregaListaJurisprudencias(dadosPesquisa, page=1) {
       //alert_erro_popup("Desculpe, ocorreu um erro ao carregar a listagem. Por favor, atualize a página e tente novamente.");
     },
     complete: function (xhr, textStatus) {
-      // fecharLoader();
+      fechaLoader();
     },
   });
 }
@@ -231,3 +231,12 @@ $('#search-btn').click(e => {
   carregaListaJurisprudencias(dadosPesquisa)
   return false
 })
+
+function carregaLoader(){
+  $('#campo_de_resultado').hide();
+  $('.loader').fadeIn();
+}
+function fechaLoader(){
+  $('#campo_de_resultado').show();
+  $('.loader').hide();
+}

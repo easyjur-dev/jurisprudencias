@@ -350,22 +350,26 @@
  #mobile_list li svg path {
    fill: var(--main-blue-color);
  }
- #actions_after_form{
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  width: 100%;
-  gap: 10px;
-}
-#actions_after_form a {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
- #copyToast{
-  background-image: var(--main-custon-btn);
-  color: #fff;
+
+ #actions_after_form {
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   width: 100%;
+   gap: 10px;
  }
+
+ #actions_after_form a {
+   display: flex;
+   gap: 10px;
+   align-items: center;
+ }
+
+ #copyToast {
+   background-image: var(--main-custon-btn);
+   color: #fff;
+ }
+
  #actions_after_form a {
    background-size: 200% auto;
    background-image: var(--main-custon-btn);
@@ -386,21 +390,52 @@
    background-position: right center;
  }
 
- .page-item{
-  cursor: pointer;
+ .page-item {
+   cursor: pointer;
  }
 
-@media screen and (max-width: 768px) {
-  #actions_after_form{
-    flex-direction: row;
-    align-items: start;
-    width: 100%;
-    justify-content: flex-start;
-  }
-  #actions_after_form a{
-    border-radius: 3px;
+ .loader{
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  display: none;
+  justify-content: center;
+ }
+ .loader-spin{
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+ }
+ .spinner {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 9px solid;
+  border-color: #dbdcef;
+  border-right-color: #474bff;
+  animation: spinner-d3wgkg 1s infinite linear;
+}
+
+@keyframes spinner-d3wgkg {
+  to {
+     transform: rotate(1turn);
   }
 }
+
+ @media screen and (max-width: 768px) {
+   #actions_after_form {
+     flex-direction: row;
+     align-items: start;
+     width: 100%;
+     justify-content: flex-start;
+   }
+
+   #actions_after_form a {
+     border-radius: 3px;
+   }
+ }
+
  @media screen and (max-width: 576px) {
 
    figure {
