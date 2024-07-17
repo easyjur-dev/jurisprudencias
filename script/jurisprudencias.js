@@ -227,6 +227,7 @@ function limparDadosPesquisa() {
 $('#search-btn').click(e => {
 
   e.preventDefault();
-  carregaListaJurisprudencias()
+  const dadosPesquisa = retornaDadosPesquisa()
+  carregaListaJurisprudencias(dadosPesquisa)
   return false
 })
