@@ -362,7 +362,10 @@
   gap: 10px;
   align-items: center;
 }
-
+ #copyToast{
+  background-image: var(--main-custon-btn);
+  color: #fff;
+ }
  #actions_after_form a {
    background-size: 200% auto;
    background-image: var(--main-custon-btn);
