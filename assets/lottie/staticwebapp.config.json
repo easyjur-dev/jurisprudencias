@@ -1,0 +1,37 @@
+{
+  "responseOverrides": {
+    "401": {
+      "statusCode": 302,
+      "redirect": "/"
+    },
+    "404": {
+      "redirect": "/"
+    }
+  },
+  "routes": [
+    {
+      "route": "/busca",
+      "rewrite": "/listagem_jurisprudencias.html"
+    },
+    {
+      "route": "/tst",
+      "rewrite": "/listagem_tst.html"
+    },
+    {
+      "route": "/stj",
+      "rewrite": "/listagem_stj.html"
+    },
+    {
+      "route": "/stf",
+      "rewrite": "/listagem_stf.html"
+    },
+    {
+      "route": "/documents/*",
+      "rewrite": "/juris_entry.html"
+    },
+    {
+      "route": "/documento/*",
+      "rewrite": "/juris_entry.html"
+    }
+  ]
+}
