@@ -2,13 +2,21 @@
   "responseOverrides": {
     "401": {
       "statusCode": 302,
-      "redirect": "/"
+      "redirect": "/home"
     },
     "404": {
-      "redirect": "/"
+      "redirect": "/home"
     }
   },
   "routes": [
+    {
+      "route": "/",
+      "redirect": "/home"
+    },
+    {
+      "route": "/home",
+      "rewrite": "/index.html"
+    },
     {
       "route": "/busca",
       "rewrite": "/listagem_jurisprudencias.html"
