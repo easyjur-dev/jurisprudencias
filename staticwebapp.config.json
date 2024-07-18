@@ -10,6 +10,10 @@
   },
   "routes": [
     {
+      "route": "",
+      "redirect": "/home"
+    },
+    {
       "route": "/",
       "redirect": "/home"
     },
