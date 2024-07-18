@@ -577,7 +577,7 @@ footer h6::after {
 }
 
 #container_line_blocs {
-    bottom: 95px;
+    bottom: 0px;
 }
 
 #grid_content,

@@ -2,7 +2,6 @@ $(document).ready(function () {
   new WOW().init();
   AOS.init();
 
-
   $('.testimonial-three-tabs .owl-carousel').owlCarousel({
     items: 1,
     loop: true,
