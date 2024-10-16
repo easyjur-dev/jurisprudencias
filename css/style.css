@@ -266,7 +266,7 @@
    margin-bottom: 10px;
  }
 
- figure {
+ .heading-banner {
    background-image: url(../assets/img/bg.jpg);
    background-size: cover;
    background-position: center;
@@ -438,7 +438,7 @@
 
  @media screen and (max-width: 576px) {
 
-   figure {
+   .heading-banner {
      display: flex;
      align-items: center;
      padding: 1.5rem;
