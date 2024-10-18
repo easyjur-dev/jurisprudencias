@@ -143,6 +143,15 @@ table {
 }
 
 
+strong {
+    font-weight: bold;
+}
+
+em {
+    font-style: italic;
+}
+
+
 #slider_circle {
     background-image: url(../assets/img/background.jpg);
     width: 100%;
@@ -158,23 +167,23 @@ header {
     background-repeat: no-repeat;
 }
 
-nav img {
+#navbar img {
     width: 170px;
 }
 
-nav ul li a {
+#navbar ul li a {
     text-decoration: none;
     color: var(--main-blue-color);
     font-size: 1.2rem;
     cursor: pointer;
 }
 
-nav ul li a:hover {
+#navbar ul li a:hover {
     color: var(--main-red-colour);
     transition: 0.3s;
 }
 
-nav ul li a::after {
+#navbar ul li a::after {
     content: '';
     display: block;
     height: 3px;
@@ -184,7 +193,7 @@ nav ul li a::after {
     transition: width 0.3s ease;
 }
 
-nav ul li a:hover::after {
+#navbar ul li a:hover::after {
     width: 80%
 }
 
@@ -517,7 +526,7 @@ footer h6::after {
     --twonet-border-dark: #d9d9d9;
 }
 
-#faq h6,
+#faq h2,
 #blog_sec h2,
 #grid_content h2 {
     font-size: 3.5rem;
@@ -900,7 +909,7 @@ footer h6::after {
     margin-right: auto;
 }
 
-.section-main-title h6 {
+.section-main-title h2 {
     font-size: 2rem;
     color: var(--main-blue-color);
 }
@@ -940,7 +949,7 @@ footer h6::after {
     padding: 50px;
 }
 
-.fixed-nav {
+.fixed-#navbar {
     position: fixed !important;
     top: 0;
     left: 0;
@@ -1027,7 +1036,7 @@ footer h6::after {
         max-height: 470px;
     }
 
-    #faq h6,
+    #faq h2,
     #blog_sec h2,
     #grid_content h2 {
         font-size: 2.6rem;
