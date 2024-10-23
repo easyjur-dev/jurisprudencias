@@ -154,7 +154,7 @@ function mostraPreviaEmenta(id) {
 }
 
 function retornaUrlJurisprudencia(id){
-    let baseUrl = 'documento/';
+    let baseUrl = '/juris/documento/';
     return (baseUrl + id);
    
 }
