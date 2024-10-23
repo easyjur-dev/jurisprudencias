@@ -9,19 +9,74 @@
     <link rel="stylesheet" href="/juris/assets/date-picker/jquery-ui.min.css" />
     <link rel="stylesheet" href="/juris/assets/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="/juris/assets/jquery-confirm/v3.3.4/jquery-confirm.min.css">
+    <link rel="stylesheet" href="/juris/assets/tippy/tippy.css">
     <link rel="stylesheet" href="/juris/css/style.css" />
 
-    <title>EasyJur Jurisprudências | Tribunal Superior do Trabalho</title>
+
+    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+    <script>
+        var texto_emenda, link_teor, link_busca;
+
+        function copiaEmentaLocal() {
+            navigator.clipboard.writeText(texto_emenda).then(function () {
+                let toastEl = document.getElementById('copyToast');
+                let toast = new bootstrap.Toast(toastEl);
+                toast.show();
+            }).catch(function (err) {
+                console.error('Erro ao copiar a ementa: ', err);
+            });
+        }
+
+        function allowUser() {
+            $("#hubspot-juris_entry").html(`
+                <div id="actions_after_form">
+                    <a href="${link_teor}"class="fs-5 p-2" target="_blank">
+                        <i class="fa-solid fa-file"></i>
+                        <span class="d-none d-md-flex">Acessar Inteiro Teor</span>
+                    </a>
+
+                    <a href="${link_busca}"class="fs-5 p-2" target="_blank">
+                        <i class="fa-regular fa-file"></i>
+                        <span class="d-none d-md-flex">Acessar Consulta Processual</span>
+                    </a>
+
+                    <a class="fs-5 p-2" onclick="copiaEmentaLocal()">
+                        <i class="fa-solid fa-copy"></i>
+                        <span class="d-none d-md-flex">Copiar Ementa</span>
+                    </a>
+                </div>
+            `);
+        }
+
+
+        hbspt.forms.create({
+            region: "na1",
+            portalId: "44225969",
+            formId: "81c21e13-3e2e-4036-a549-611535b34226",
+        });
+
+        window.addEventListener('message', (event) => {
+            if (
+                event.data.type === 'hsFormCallback' &&
+                event.data.eventName === 'onFormSubmitted'
+            ) {
+
+                allowUser()
+            }
+        });
+
+    </script>
+
+    <title>EasyJur Jurisprudências</title>
 </head>
 
-
-<body id="jurisprudencias_wp">
+<body id="jurisprudencia_documento">
     <header class="header">
         <div id="navbar">
-            <div class="container-fluid  px-lg-5 mx-lg-5">
+            <div class="container">
                 <span class="navbar-brand mb-0 h1">
-                    <a href="home">
-                        <img id="logo" src="/assets/assets/img/logo_easyjur.png" alt="Logomarca EasyJur" style="width: 170px;">
+                    <a href="/juris/home">
+                        <img id="logo" src="/juris/assets/img/logo_easyjur.png" alt="Logomarca EasyJur" style="width: 170px;">
                     </a>
                 </span>
                 <nav>
@@ -29,7 +84,7 @@
                         <li><a href="/juris/tst" class="fs-4">TST</a></li>
                         <li><a href="/juris/stj" class="fs-4">STJ</a></li>
                         <li><a href="/juris/stf" class="fs-4">STF</a></li>
-                        <li><a href="/juris/busca" class="fs-4">Pesquisar</a></li>
+                        <li><a href="/juris/search" class="fs-4">Pesquisar</a></li>
                     </ul>
                 </nav>
 
@@ -59,18 +114,22 @@
                                     <i class="fa-solid fa-book"></i>
                                     <a href="/juris/tst" class="fs-4">TST</a>
                                 </li>
+
                                 <li>
                                     <i class="fa-solid fa-book"></i>
                                     <a href="/juris/stj" class="fs-4">STJ</a>
                                 </li>
+
                                 <li>
                                     <i class="fa-solid fa-book"></i>
                                     <a href="/juris/stf" class="fs-4">STF</a>
                                 </li>
+
                                 <li>
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                     <a href="/juris/busca" class="fs-4">Pesquisar</a>
                                 </li>
+
                                 <li>
                                     <span class="barra-abaixo mt-5">Conheça o ecossistema Easyjur</span>
                                 </li>
@@ -150,68 +209,74 @@
                     </div>
                 </div>
             </div>
-        </nav>
+        </div>
     </header>
+
     <main>
-        <div class="heading-banner Jurisprudências STF">
-            <div class="container-fluid">
-                <h1 class="fs-1 titulo-modulo">Jurisprudências TST</h1>
+        <div class="heading-banner">
+            <div class="container">
+                <h1 class="fs-1 titulo-modulo"></h1>
+                <div class="lh-1 mx-4">
+                    <p id="court-label" class="fs-5 m-0 fw-bold"></p>
+                    <p id="date-label" class="fs-5 m-0 fw-bold"></p>
+                </div>
             </div>
         </div>
 
-        <div class="loader">
-            <div class="loader-spin">
-                <div class="spinner"></div>
-                <p class="fs-5 fw-semibold">Carregando Jurisprudências...</p>
-            </div>
-        </div>
+        <section>
+            <div class="container">
+                <div class="row py-5">
+                    <div id="doc-info" class="col-lg-6 p-5 border position-relative">
+                        <h2 class="fs-1 fw-bold">Ementa</h2>
+                        <p id="ementa" class="fs-5"></p>
+                        <p id="relator" class="fs-5 fw-bold"></p>
+                        <p class="fs-5">Publicado em: <span id="data-publicado"></span></p>
+                    </div>
 
-        <section id="campo_de_resultado_tst" class="row justify-content-center">
-            <div class="card mt-3">
-                <div class="card-body">
-                    <table class="table table-striped">
-                        <thead class="header-tabela-personalizado">
-                            <tr>
-                                <th style="width: 25%">Processo</th>
-                                <th style="width: 60%">Ementa</th>
-                                <th style="width: 15%">Ações</th>
-                            </tr>
-                        </thead>
-
-                        <tbody id="corpo_listagem_tabela" class="body-tabela-personalizado">
-                        </tbody>
-                    </table>
-
-                    <div class="d-flex align-items-center justify-content-center">
-                        <footer aria-label="Page navigation example">
-                            <ul class="pagination pagination-container">
-                            </ul>
-                        </footer>
+                    <div class="col-lg-6">
+                        <div class="px-0 px-md-5 mt-5 mt-lg-0">
+                            <h3 class="fs-1">Acesse seu documento!</h3>
+                            <p class="fs-5">Estamos muito contentes em poder compartilhar este documento com você. Para que
+                                possamos enviar o
+                                material com toda a segurança e rapidez, por favor, preencha o formulário abaixo.</p>
+                            <div id="hubspot-juris_entry"></div>
+                        </div>
                     </div>
                 </div>
             </div>
-
         </section>
     </main>
 
-    <script src="/assets/assets/jquery/jquery-3.7.1.min.js"></script>
-    <script src="/assets/assets/bootstrap/bootstrap.bundle.min.js"></script>
-    <script src="/assets/assets/font-awesome/6.5.1/js/all.min.js"></script>
-    <script src="/assets/assets/date-picker/jquery-ui.min.js"></script>
-    <script src="/assets/assets/jquery-mask/1.14.16/jquery.mask.min.js"></script>
-    <script src="/assets/assets/html2pdfjs/html2pdf.bundle.min.js"></script>
-    <script src="/assets/assets/jquery-confirm/v3.3.4/jquery-confirm.min.js"></script>
-    <script src="/assets/script/template_juris_lista.js"></script>
-    <script src="/assets/script/jurisprudencias.js"></script>
-    <script>
-        let dadosPesquisa = {
-            q: '',
-            checkboxTST: 1
-        }
-        console.log('inicial')
-        carregaListaJurisprudencias(dadosPesquisa)
-    </script>
 
+
+    <div class="toast-container position-fixed bottom-0 start-0 p-3">
+        <div id="copyToast" class="toast align-items-center border-0" role="alert" aria-live="assertive"
+            aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body fs-5">
+                    Ementa copiada com sucesso!
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                    aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="/juris/assets/jquery/jquery-3.7.1.min.js"></script>
+    <script src="/juris/assets/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="/juris/assets/font-awesome/6.5.1/js/all.min.js"></script>
+    <script src="/juris/assets/date-picker/jquery-ui.min.js"></script>
+    <script src="/juris/assets/jquery-mask/1.14.16/jquery.mask.min.js"></script>
+    <script src="/juris/assets/html2pdfjs/html2pdf.bundle.min.js"></script>
+    <script src="/juris/assets/jquery-confirm/v3.3.4/jquery-confirm.min.js"></script>
+    <script src="/juris/assets/tippy/popper.min.js"></script>
+    <script src="/juris/assets/tippy/tippy-bundle.umd.js"></script>
+    <script src="/juris/script/doc.js"></script>
+    <script>
+        atualizaPaginaDocumento()
+    </script>
 
 </body>
 
