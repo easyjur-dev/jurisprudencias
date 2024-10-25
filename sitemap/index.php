@@ -21,11 +21,11 @@
                     // Lê o conteúdo da pasta
                     $arquivos = scandir($pasta);
 
-                    // Itera sobre cada item na pasta
+                    // Itera sobre cada item na pasta-+
                     foreach ($arquivos as $arquivo) {
                         // Ignora '.' e '..'
                         if (!in_array($arquivo, ['.', '..', 'index.php'])) {
-                            echo "<li class='list-group-item'><a href='/sitemap/$arquivo'>$arquivo</a></li>";
+                            echo "<li class='list-group-item'><a href='/juris/sitemap/$arquivo'>$arquivo</a></li>";
                         }
                     }
                 }
