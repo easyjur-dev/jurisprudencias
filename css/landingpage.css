@@ -171,19 +171,19 @@ header {
     width: 170px;
 }
 
-#navbar ul li a {
+#navbar nav ul li a {
     text-decoration: none;
     color: var(--main-blue-color);
     font-size: 1.2rem;
     cursor: pointer;
 }
 
-#navbar ul li a:hover {
+#navbar nav ul li a:hover {
     color: var(--main-red-colour);
     transition: 0.3s;
 }
 
-#navbar ul li a::after {
+#navbar nav ul li a::after {
     content: '';
     display: block;
     height: 3px;
@@ -193,7 +193,7 @@ header {
     transition: width 0.3s ease;
 }
 
-#navbar ul li a:hover::after {
+#navbar nav ul li a:hover::after {
     width: 80%
 }
 
