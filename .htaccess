@@ -1,0 +1,1 @@
+RewriteRule ^documento/(.*)$ /juris/doc/index.php [L]
