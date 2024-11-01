@@ -43,7 +43,7 @@ async function buscaDocumento(engine, id) {
     let params = (new URLSearchParams(dadosPesquisa)).toString()
 
     const resultado = await $.ajax({
-        url: "https://magnolio.azurewebsites.net/api/document?" + params,
+        url: "https://magnoli.azurewebsites.net/api/document?" + params,
         //url: "http://localhost:7071/api/document?" + params,
     });
 
