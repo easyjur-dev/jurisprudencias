@@ -73,7 +73,7 @@
 <body id="jurisprudencia_documento">
     <header class="header">
         <div id="navbar">
-            <div class="container">
+            <div class="container p-4 d-flex justify-content-between align-items-center">
                 <span class="navbar-brand mb-0 h1">
                     <a href="/juris/home">
                         <img id="logo" src="/juris/assets/img/logo_easyjur.png" alt="Logomarca EasyJur" style="width: 170px;">
@@ -84,7 +84,7 @@
                         <li><a href="/juris/tst" class="fs-4">TST</a></li>
                         <li><a href="/juris/stj" class="fs-4">STJ</a></li>
                         <li><a href="/juris/stf" class="fs-4">STF</a></li>
-                        <li><a href="/juris/search" class="fs-4">Pesquisar</a></li>
+                        <li><a href="/juris/busca" class="fs-4">Pesquisar</a></li>
                     </ul>
                 </nav>
 

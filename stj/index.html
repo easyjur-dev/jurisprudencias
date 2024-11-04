@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="/juris/assets/icons/favicon.svg" type="image/x-icon">
-    <link rel="stylesheet" href="/juris/assets/bootstrap/bootstrap.min.css" />
-    <link rel="stylesheet" href="/juris/assets/date-picker/jquery-ui.min.css" />
-    <link rel="stylesheet" href="/juris/assets/font-awesome/6.5.1/css/all.min.css" />
-    <link rel="stylesheet" href="/juris/assets/jquery-confirm/v3.3.4/jquery-confirm.min.css">
-    <link rel="stylesheet" href="/juris/css/style.css" />
+    <link rel="shortcut icon" href="../assets/icons/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../assets/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/date-picker/jquery-ui.min.css" />
+    <link rel="stylesheet" href="../assets/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="../assets/jquery-confirm/v3.3.4/jquery-confirm.min.css">
+    <link rel="stylesheet" href="../css/style.css" />
 
     <title>EasyJur Jurisprudências</title>
 </head>
@@ -18,17 +18,17 @@
 <body id="jurisprudencias_wp">
     <header class="header">
         <div id="navbar">
-            <div class="container-fluid  px-lg-5 mx-lg-5">
+            <div class="container p-4 d-flex justify-content-between align-items-center">
                 <span class="navbar-brand mb-0 h1">
                     <a href="/juris/home">
-                        <img id="logo" src="/juris/assets/img/logo_easyjur.png" alt="Logomarca EasyJur" style="width: 170px;">
+                        <img id="logo" src="../assets/img/logo_easyjur.png" alt="Logomarca EasyJur" style="width: 170px;">
                     </a>
                 </span>
                 <nav>
                     <ul id="list_jurisp" class="d-flex gap-3">
-                        <li><a href="/juris/tst" class="fs-4">TST</a></li>
-                        <li><a href="/juris/stj" class="fs-4">STJ</a></li>
-                        <li><a href="/juris/stf" class="fs-4">STF</a></li>
+                        <li><a href="../tst" class="fs-4">TST</a></li>
+                        <li><a href="../stj" class="fs-4">STJ</a></li>
+                        <li><a href="../stf" class="fs-4">STF</a></li>
                         <li><a href="/juris/busca" class="fs-4">Pesquisar</a></li>
                     </ul>
                 </nav>
@@ -56,19 +56,22 @@
                             <ul id="mobile_list" class="d-flex text-start flex-column gap-4 mt-5 p-3">
                                 <li>
                                     <i class="fa-solid fa-book"></i>
-                                    <a href="/juris/tst" class="fs-4">TST</a>
+                                    <a href="listagem_tst.html" class="fs-4">TST</a>
                                 </li>
+
                                 <li>
                                     <i class="fa-solid fa-book"></i>
-                                    <a href="/juris/stj" class="fs-4">STJ</a>
+                                    <a href="listagem_stj.html" class="fs-4">STJ</a>
                                 </li>
+
                                 <li>
                                     <i class="fa-solid fa-book"></i>
-                                    <a href="/juris/stf" class="fs-4">STF</a>
+                                    <a href="listagem_stf.html" class="fs-4">STF</a>
                                 </li>
+
                                 <li>
                                     <i class="fa-solid fa-magnifying-glass"></i>
-                                    <a href="/juris/busca" class="fs-4">Pesquisar</a>
+                                    <a href="listagem_jurisprudencias.html" class="fs-4">Pesquisar</a>
                                 </li>
 
                                 <li>
@@ -195,15 +198,15 @@
         </section>
     </main>
 
-    <script src="/juris/assets/jquery/jquery-3.7.1.min.js"></script>
-    <script src="/juris/assets/bootstrap/bootstrap.bundle.min.js"></script>
-    <script src="/juris/assets/font-awesome/6.5.1/js/all.min.js"></script>
-    <script src="/juris/assets/date-picker/jquery-ui.min.js"></script>
-    <script src="/juris/assets/jquery-mask/1.14.16/jquery.mask.min.js"></script>
-    <script src="/juris/assets/html2pdfjs/html2pdf.bundle.min.js"></script>
-    <script src="/juris/assets/jquery-confirm/v3.3.4/jquery-confirm.min.js"></script>
-    <script src="/juris/script/template_juris_lista.js"></script>
-    <script src="/juris/script/jurisprudencias.js"></script>
+    <script src="../assets/jquery/jquery-3.7.1.min.js"></script>
+    <script src="../assets/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../assets/font-awesome/6.5.1/js/all.min.js"></script>
+    <script src="../assets/date-picker/jquery-ui.min.js"></script>
+    <script src="../assets/jquery-mask/1.14.16/jquery.mask.min.js"></script>
+    <script src="../assets/html2pdfjs/html2pdf.bundle.min.js"></script>
+    <script src="../assets/jquery-confirm/v3.3.4/jquery-confirm.min.js"></script>
+    <script src="../script/template_juris_lista.js"></script>
+    <script src="../script/jurisprudencias.js"></script>
     <script>
         let dadosPesquisa = {
             q: '',
