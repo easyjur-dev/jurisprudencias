@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
     <link rel="shortcut icon" href="/juris/assets/icons/favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="/juris/assets/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="/juris/assets/date-picker/jquery-ui.min.css" />
@@ -11,6 +12,14 @@
     <link rel="stylesheet" href="/juris/assets/jquery-confirm/v3.3.4/jquery-confirm.min.css">
     <link rel="stylesheet" href="/juris/assets/tippy/tippy.css">
     <link rel="stylesheet" href="/juris/css/style.css" />
+    <!-- Add Canonical Link -->
+    <?php
+        // Dynamically generate the canonical URL
+        $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') ? "https" : "http";
+        $currentUrl = $protocol . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+    ?>
+    <link rel="canonical" href="<?php echo htmlspecialchars($currentUrl, ENT_QUOTES, 'UTF-8'); ?>" />
+
 
 
     <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
