@@ -1,1 +1,112 @@
-RewriteRule ^documento/(.*)$ /juris/doc/index.php [L]
+# /public_html/juris/.htaccess
+
+RewriteEngine On
+RewriteBase /juris/
+Options -MultiViews
+
+# Bloquear acesso publico ao repositorio git (.git)
+RewriteRule ^\.git(/|$) - [R=404,L]
+DirectoryIndex index.html
+
+###############################################################################
+# 1) Forçar HTTPS e remover WWW (preserva o caminho com %{REQUEST_URI})
+###############################################################################
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\.easyjur\.com$ [NC]
+RewriteRule ^ https://easyjur.com%{REQUEST_URI} [L,R=301]
+
+###############################################################################
+# 2) Home de /juris
+###############################################################################
+RewriteRule ^$ index.html [L]
+
+###############################################################################
+# 3) Preferir PASTA real (se existir) para busca/tst/stj/stf
+#    - /busca
+###############################################################################
+RewriteCond %{DOCUMENT_ROOT}/juris/busca -d
+RewriteRule ^busca/?$ busca/ [L,NC]
+
+#    - /tst
+RewriteCond %{DOCUMENT_ROOT}/juris/tst -d
+RewriteRule ^tst/?$ tst/ [L,NC]
+
+#    - /stf
+RewriteCond %{DOCUMENT_ROOT}/juris/stf -d
+RewriteRule ^stf/?$ stf/ [L,NC]
+
+#    - /stj (tenta diretório em CAIXA ALTA primeiro; depois minúsculo)
+RewriteCond %{DOCUMENT_ROOT}/juris/STJ -d
+RewriteRule ^stj/?$ STJ/ [L,NC]
+RewriteCond %{DOCUMENT_ROOT}/juris/stj -d
+RewriteRule ^stj/?$ stj/ [L,NC]
+
+###############################################################################
+# 4) Fallbacks para arquivos "listagem_*" quando NÃO houver as pastas
+###############################################################################
+# busca
+RewriteRule ^busca/?$ listagem_jurisprudencias.html [L,NC]
+
+# tst / stf
+RewriteRule ^(tst|stf)/?$ listagem_%1.html [L,NC]
+
+# stj: tenta listagem_stj.html; se não existir, tenta listagem_STJ.html
+RewriteCond %{DOCUMENT_ROOT}/juris/listagem_stj\.html -f
+RewriteRule ^stj/?$ listagem_stj.html [L,NC]
+RewriteCond %{DOCUMENT_ROOT}/juris/listagem_STJ\.html -f
+RewriteRule ^stj/?$ listagem_STJ.html [L,NC]
+
+###############################################################################
+# 5) Documentos (URLs limpas -> arquivo com querystring)
+###############################################################################
+RewriteRule ^documents/(.+)$  juris_entry.html?doc=$1 [L,QSA,NC]
+RewriteRule ^documento/(.+)$  juris_entry.html?doc=$1 [L,QSA,NC]
+
+###############################################################################
+# 6) NÃO reescrever se o destino for arquivo/pasta real (assets etc.)
+###############################################################################
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+###############################################################################
+# 7) (Opcional) 404 limpo para rotas não cobertas
+# RewriteRule ^(tst|stj|stf|busca)/?$ - [R=404,L]
+
+###############################################################################
+# 8) Segurança básica
+###############################################################################
+<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|inc|bak)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+###############################################################################
+# 9) Cache (performance)
+###############################################################################
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/html "access plus 1 hour"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+</IfModule>
+
+###############################################################################
+# 10) Compressão GZIP
+###############################################################################
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+</IfModule>

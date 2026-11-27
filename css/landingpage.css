@@ -113,3 +113,15 @@
     min-height: 300px; /* Garante um mínimo de espaço */
   }
 }
+
+/* Fonte institucional, a mesma usada em easyjur.com. Declarada aqui e nao
+   apenas no body para alcancar os controles de formulario, que nao herdam
+   font-family do documento por padrao. */
+body,
+button,
+input,
+select,
+textarea,
+.form-control {
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
