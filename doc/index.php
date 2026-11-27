@@ -22,7 +22,9 @@
 
 
 
-    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+    <!-- EasyDesk: banner de cookies e UTMs (GTM-885) -->
+    <script src="/juris/script/easydesk.js?v=1"></script>
+    <!-- End EasyDesk -->
     <script>
         var texto_emenda, link_teor, link_busca;
 
@@ -57,22 +59,6 @@
             `);
         }
 
-
-        hbspt.forms.create({
-            region: "na1",
-            portalId: "44225969",
-            formId: "81c21e13-3e2e-4036-a549-611535b34226",
-        });
-
-        window.addEventListener('message', (event) => {
-            if (
-                event.data.type === 'hsFormCallback' &&
-                event.data.eventName === 'onFormSubmitted'
-            ) {
-
-                allowUser()
-            }
-        });
 
     </script>
 
@@ -265,7 +251,7 @@
     <script src="/juris/assets/jquery-confirm/v3.3.4/jquery-confirm.min.js"></script>
     <script src="/juris/assets/tippy/popper.min.js"></script>
     <script src="/juris/assets/tippy/tippy-bundle.umd.js"></script>
-    <script src="/juris/script/doc.js"></script>
+    <script src="/juris/script/doc.js?v=4"></script>
     <script>
         atualizaPaginaDocumento()
     </script>

@@ -43,12 +43,6 @@ $(document).ready(function () {
 function removeActive() {
   $('#hamburger').removeClass('active');
 }
-hbspt.forms.create({
-  region: "na1",
-  portalId: "44225969",
-  formId: "206d5bd5-fb77-40d4-bf91-4602fe59a335",
-  target: "#whatsApp-form"
-});
 
 
 tippy('#top3_1', {
