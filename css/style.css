@@ -5,8 +5,8 @@
    --vermelho: #f21f3c;
    --botao-personalizado: linear-gradient(to right, #f21f3c 0%, #a91f40 51%, #f21f3c 100%);
    --branco-fundo: #ececec;
-   --azul-secundario: #2784b1;
-   --azul-secundario-hover: #05608c;
+   --azul-secundario: #a82130;
+   --azul-secundario-hover: #861a26;
    --cinza-secundario: #95a8b1;
    --cinza-documento: #6a7074;
    --subtitulo-documento: #000000aa;
@@ -495,3 +495,15 @@
      display: none;
    }
  }
+
+/* Fonte institucional, a mesma usada em easyjur.com. Declarada aqui e nao
+   apenas no body para alcancar os controles de formulario, que nao herdam
+   font-family do documento por padrao. */
+body,
+button,
+input,
+select,
+textarea,
+.form-control {
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}

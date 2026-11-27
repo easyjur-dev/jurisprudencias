@@ -10,6 +10,11 @@
   },
   "routes": [
     {
+      "route": "http://*",
+      "redirect": "https://{host}/{path}",
+      "statusCode": 301
+    },
+    {
       "route": " ",
       "redirect": "/home"
     },
