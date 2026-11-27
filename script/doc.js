@@ -26,12 +26,43 @@ tippy('#doc-info', {
     followCursor: 'true'
 });
 
-hbspt.forms.create({
-    region: "na1",
-    portalId: "44225969",
-    formId: "81c21e13-3e2e-4036-a549-611535b34226",
-    target: "#hubspot-juris_entry"
-});
+// Formulario do EasyDesk "[MATERIAL GRATUITO] FORMULARIO DE JURISPRUDENCIAS".
+// O formulario so e montado quando a pessoa clica: cada montagem consulta o
+// EasyDesk, e montar em toda visita esgotaria o limite de leituras do servico.
+var EASYDESK_FORMULARIO_DOCUMENTO = "13400d57-6d43-492c-8603-f47e1a1a6064";
+
+function mostraBotaoFormulario() {
+    var $acoes = $('<div id="actions_after_form"></div>');
+    var $botao = $('<a id="abrir_formulario_documento" role="button" class="fs-5 p-2"></a>')
+        .append('<i class="fa-solid fa-lock-open"></i>')
+        .append($('<span></span>').text('Preencher formulário e acessar'));
+    $botao.on('click', abreFormularioDocumento);
+    $acoes.append($botao);
+    $('#hubspot-juris_entry').empty().append($acoes);
+}
+
+function abreFormularioDocumento() {
+    var url = "https://easydesk-forms.easyjur.com/f/" + EASYDESK_FORMULARIO_DOCUMENTO;
+    var $container = $('<div class="easydesk-form-container"></div>')
+        .attr('data-easydesk-form', EASYDESK_FORMULARIO_DOCUMENTO)
+        .attr('data-title', 'Acesse seu documento');
+    $container.append(
+        $('<a class="easydesk-form-fallback" target="_blank" rel="noopener noreferrer"></a>')
+            .attr('href', url)
+            .text('Abrir formulário em uma nova página')
+    );
+    // O embed.js dispara "easydesk:received" no container quando o EasyDesk
+    // confirma o recebimento do envio (vale o recibo, nao o clique no botao).
+    $container[0].addEventListener('easydesk:received', function () {
+        allowUser();
+    });
+    $('#hubspot-juris_entry').empty().append($container);
+    if (typeof window.carregaEasyDesk === 'function') {
+        window.carregaEasyDesk();
+    }
+}
+
+mostraBotaoFormulario();
 
 
 async function buscaDocumento(engine, id) {
